@@ -3,536 +3,939 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Tamil Panchangam — Daily Vedic Almanac for the World</title>
-<meta name="description" content="Free Tamil Panchangam app for Android & iOS. Daily Tithi, Nakshatram, Rahu Kalam and Muhurtham times — accurate for your city worldwide."/>
-<meta property="og:title" content="Tamil Panchangam — Daily Vedic Almanac"/>
-<meta property="og:description" content="Accurate Rahu Kalam, Tithi, Nakshatram and Muhurtham times for Tamil communities worldwide. Free on Android."/>
-<meta property="og:type" content="website"/>
+<title>Tamil Panchangam — Daily Almanac, Rasi Predictions & Muhurtham | tamilvaram.com</title>
+<meta name="description" content="Free Tamil Panchangam with daily Tithi, Nakshatram, Rahu Kalam, Muhurtham finder, yearly Rasi predictions and home screen widget. Worldwide."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
-
-<!-- ═══ PASTE YOUR GOOGLE ADSENSE CODE HERE WHEN APPROVED ═══
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-═══════════════════════════════════════════════════════════════ -->
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --indigo:#1A1240; --indigo2:#2D2060; --indigo3:#3D2A80;
-  --saffron:#E8650A; --gold:#F5C518; --gold-lt:#FDE68A;
-  --cream:#FDF6EC; --white:#FFFFFF;
-  --text:#1A1240; --mid:#4A3F6B; --light:#8B7DB5;
-  --green:#10B981; --red:#EF4444; --purple:#8B5CF6; --blue:#0EA5E9;
+:root{
+  --ink:#1A1240;--ink2:#2D2060;--ink3:#3D2A80;
+  --saffron:#E8650A;--gold:#F5C518;--gold-lt:#FDE68A;
+  --cream:#FDF6EC;--white:#fff;
+  --mid:#4A3F6B;--light:#8B7DB5;
+  --green:#10B981;--red:#EF4444;--purple:#8B5CF6;--blue:#0EA5E9;
+  --border:rgba(232,101,10,.13);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;}
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,18,64,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,197,24,0.15);padding:0 24px;}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;}
-.nav-logo{font-family:'Noto Serif Tamil',serif;font-size:1.1rem;color:var(--gold);font-weight:700;text-decoration:none;}
-.nav-logo span{font-family:'Inter',sans-serif;font-size:0.7rem;color:rgba(245,197,24,0.5);display:block;letter-spacing:0.1em;text-transform:uppercase;margin-top:-2px;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-.nav-links a:hover{color:var(--gold);}
-.nav-cta{background:var(--saffron);color:white!important;padding:8px 18px;border-radius:20px;font-weight:600!important;transition:transform 0.2s,box-shadow 0.2s!important;}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(232,101,10,0.4);}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(26,18,64,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(245,197,24,.12);padding:0 20px;}
+.ni{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nlogo{font-family:'Noto Serif Tamil',serif;font-size:1rem;color:var(--gold);font-weight:700;text-decoration:none;}
+.nlogo small{font-family:'Inter',sans-serif;font-size:.58rem;color:rgba(245,197,24,.4);display:block;letter-spacing:.1em;text-transform:uppercase;}
+.nlinks{display:flex;gap:20px;align-items:center;}
+.nlinks a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;font-weight:500;transition:color .2s;}
+.nlinks a:hover{color:var(--gold);}
+.ncta{background:var(--saffron)!important;color:#fff!important;padding:6px 15px;border-radius:16px;font-weight:700!important;}
 
-/* ── HERO ── */
-.hero{min-height:100vh;background:linear-gradient(160deg,var(--indigo) 0%,var(--indigo2) 55%,var(--indigo3) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 60px;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
-.star{position:absolute;background:white;border-radius:50%;animation:twinkle var(--d,3s) var(--delay,0s) infinite;}
-@keyframes twinkle{0%,100%{opacity:0.1}50%{opacity:var(--op,0.6)}}
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(150deg,#0F0A2E 0%,#1A1240 40%,#2D2060 75%,#1A1240 100%);display:flex;align-items:center;padding:70px 20px 40px;position:relative;overflow:hidden;}
+canvas#stars{position:absolute;inset:0;width:100%;height:100%;}
+.hero-in{max-width:1100px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center;position:relative;z-index:1;}
+.htag{font-size:.66rem;font-weight:700;color:var(--saffron);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.htag::before{content:'';width:24px;height:1px;background:var(--saffron);}
+.htitle{font-family:'Noto Serif Tamil',serif;font-size:2.7rem;font-weight:700;color:var(--gold);line-height:1.12;margin-bottom:6px;}
+.hsub{font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:6px;line-height:1.65;}
+.hsub strong{color:var(--gold-lt);}
+.hdesc{font-size:.84rem;color:rgba(255,255,255,.38);margin-bottom:28px;line-height:1.75;}
+.hbtns{display:flex;gap:10px;flex-wrap:wrap;}
+.bp{display:inline-flex;align-items:center;gap:7px;background:var(--saffron);color:#fff;padding:12px 22px;border-radius:26px;font-weight:700;font-size:.88rem;text-decoration:none;box-shadow:0 4px 16px rgba(232,101,10,.35);transition:all .2s;}
+.bp:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(232,101,10,.5);}
+.bs{display:inline-flex;align-items:center;gap:7px;background:rgba(245,197,24,.1);color:var(--gold);padding:12px 20px;border-radius:26px;font-weight:600;font-size:.88rem;text-decoration:none;border:1px solid rgba(245,197,24,.26);transition:all .2s;}
+.bs:hover{background:rgba(245,197,24,.17);}
+.free-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.28);color:var(--green);font-size:.65rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:18px;letter-spacing:.04em;}
 
-canvas#kolam{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.07;}
+/* PHONE */
+.phone-wrap{display:flex;justify-content:center;}
+.pshell{width:310px;background:#0a0a14;border-radius:38px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.07),inset 0 0 0 1px rgba(255,255,255,.03);}
+.pnotch{width:72px;height:20px;background:#0a0a14;border-radius:0 0 12px 12px;margin:0 auto 8px;}
+.pscreen{border-radius:26px;overflow:hidden;height:560px;background:var(--cream);}
 
-.hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
-.hero-text{}
-.hero-eyebrow{font-size:0.72rem;font-weight:700;color:var(--saffron);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;}
-.hero-title{font-family:'Noto Serif Tamil',serif;font-size:3rem;font-weight:700;color:var(--gold);line-height:1.15;margin-bottom:8px;text-shadow:0 2px 20px rgba(245,197,24,0.25);}
-.hero-subtitle{font-size:1.1rem;color:rgba(255,255,255,0.85);margin-bottom:8px;font-weight:300;line-height:1.6;}
-.hero-subtitle strong{color:var(--gold-lt);font-weight:600;}
-.hero-desc{font-size:0.9rem;color:rgba(255,255,255,0.5);margin-bottom:32px;line-height:1.7;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--saffron);color:white;padding:14px 28px;border-radius:30px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(232,101,10,0.35);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,101,10,0.5);}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:rgba(245,197,24,0.1);color:var(--gold);padding:14px 28px;border-radius:30px;font-weight:600;font-size:0.95rem;text-decoration:none;border:1px solid rgba(245,197,24,0.3);transition:all 0.2s;}
-.btn-secondary:hover{background:rgba(245,197,24,0.18);}
+/* APP */
+.aw{height:100%;display:flex;flex-direction:column;font-size:12.5px;overflow:hidden;}
+.ah{background:linear-gradient(160deg,#1A1240,#2D2060);padding:12px 12px 10px;text-align:center;flex-shrink:0;}
+.aht{font-family:'Noto Serif Tamil',serif;font-size:1.1rem;font-weight:700;color:#F5C518;}
+.ahs{font-size:.56rem;color:rgba(245,197,24,.45);letter-spacing:.1em;text-transform:uppercase;margin-top:1px;}
+.adate{display:inline-flex;align-items:center;gap:5px;background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.2);border-radius:18px;padding:3px 9px;margin-top:6px;font-size:.62rem;color:#FDE68A;}
+.adot{width:5px;height:5px;border-radius:50%;background:#E8650A;animation:pulse 2s infinite;}
+.anav{background:#1A1240;display:flex;flex-shrink:0;overflow-x:auto;}
+.anav::-webkit-scrollbar{display:none;}
+.atab{flex-shrink:0;padding:7px 4px;background:none;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,.35);font-size:.54rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;display:flex;flex-direction:column;align-items:center;gap:1px;transition:all .2s;min-width:52px;}
+.atab.on{color:#F5C518;border-bottom-color:#E8650A;}
+.atab span{font-size:.78rem;}
+.abody{flex:1;overflow-y:auto;padding:10px;background:#FDF6EC;}
+.abody::-webkit-scrollbar{width:2px;}
+.abody::-webkit-scrollbar-thumb{background:rgba(26,18,64,.15);border-radius:2px;}
 
-/* ── LIVE PANCHANGAM CARD ── */
-.live-card{background:rgba(255,255,255,0.06);border:1px solid rgba(245,197,24,0.2);border-radius:24px;padding:24px;backdrop-filter:blur(10px);}
-.live-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
-.live-title{font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;}
-.live-dot{display:flex;align-items:center;gap:6px;font-size:0.7rem;color:var(--green);}
-.live-dot::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-.panca-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.panca-item{background:rgba(255,255,255,0.05);border-radius:12px;padding:12px;}
-.panca-label{font-size:0.58rem;font-weight:700;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
-.panca-val{font-size:0.92rem;font-weight:700;color:white;line-height:1.2;}
-.panca-sub{font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:2px;}
-.kalam-row{display:flex;align-items:center;gap:8px;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:10px 12px;margin-top:10px;}
-.kalam-dot{width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;}
-.kalam-label{font-size:0.72rem;font-weight:600;color:rgba(255,255,255,0.7);flex:1;}
-.kalam-time{font-size:0.72rem;color:#EF4444;font-weight:700;}
-.good-row{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2);}
-.good-row .kalam-dot{background:#10B981;}
-.good-row .kalam-time{color:#10B981;}
+/* APP CARDS */
+.ac{background:#fff;border-radius:11px;padding:10px 11px;border:1px solid rgba(232,101,10,.12);position:relative;overflow:hidden;margin-bottom:8px;}
+.ac::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--ca,#E8650A);}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:8px;}
+.al{font-size:.54rem;font-weight:700;color:#8B7DB5;letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px;}
+.av{font-size:.86rem;font-weight:700;color:#1A1240;line-height:1.2;}
+.asb{font-size:.6rem;color:#4A3F6B;margin-top:2px;}
+.asec{font-size:.62rem;font-weight:700;color:#1A1240;text-transform:uppercase;letter-spacing:.06em;margin:9px 0 5px;display:flex;align-items:center;gap:5px;}
+.asec::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(232,101,10,.14),transparent);}
+.arow{background:#fff;border-radius:8px;padding:8px 10px;border:1px solid rgba(232,101,10,.1);display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+.ardot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.arnm{font-size:.72rem;font-weight:600;color:#1A1240;flex:1;}
+.artm{font-size:.6rem;color:#4A3F6B;background:#FDF6EC;padding:2px 6px;border-radius:5px;white-space:nowrap;}
+.bg{font-size:.54rem;font-weight:700;padding:1px 5px;border-radius:5px;background:#ECFDF5;color:#065F46;border:1px solid #A7F3D0;white-space:nowrap;}
+.ba{font-size:.54rem;font-weight:700;padding:1px 5px;border-radius:5px;background:#FFF5F5;color:#9B1C1C;border:1px solid #FCA5A5;white-space:nowrap;}
+.suncard{background:linear-gradient(135deg,#FFF8E7,#FEF3C7);border:1px solid #FDE68A;border-radius:11px;padding:10px 11px;margin-bottom:8px;}
+.strack{position:relative;height:5px;background:linear-gradient(90deg,#1A1240,#F5C518 25%,#E8650A 50%,#F5C518 75%,#1A1240);border-radius:3px;margin:6px 0 4px;}
+.sball{position:absolute;top:50%;transform:translate(-50%,-50%);width:10px;height:10px;background:#F5C518;border-radius:50%;border:2px solid #fff;box-shadow:0 0 5px rgba(245,197,24,.8);}
+.locbar{background:linear-gradient(90deg,#1A1240,#2D2060);border-radius:8px;padding:7px 10px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.locbtn{background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:2px 7px;color:#F5C518;font-size:.55rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;}
+.rahudk{background:linear-gradient(135deg,#1A1240,#2D2060);border-radius:11px;padding:11px;color:#fff;margin-bottom:8px;}
+.segbar{display:flex;gap:2px;margin-top:9px;}
+.seg{flex:1;height:5px;border-radius:2px;background:rgba(255,255,255,.08);}
+.seg.r{background:#EF4444;}.seg.g{background:#F59E0B;}.seg.y{background:#6366F1;}
 
-/* ── AD SLOT ── */
-.ad-slot{background:rgba(255,255,255,0.03);border:1px dashed rgba(255,255,255,0.1);border-radius:12px;padding:16px;text-align:center;margin-top:14px;min-height:60px;display:flex;align-items:center;justify-content:center;}
-.ad-placeholder{font-size:0.65rem;color:rgba(255,255,255,0.2);letter-spacing:0.05em;}
+/* RASI PREDICTION */
+.rasi-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}
+.rasi-card{background:#fff;border-radius:9px;padding:8px 9px;border:1px solid rgba(232,101,10,.11);cursor:pointer;transition:all .15s;}
+.rasi-card:hover,.rasi-card.sel{background:var(--ink);border-color:var(--gold);}
+.rasi-card.sel .rn,.rasi-card:hover .rn{color:var(--gold);}
+.rasi-card.sel .rt,.rasi-card:hover .rt{color:rgba(245,197,24,.5);}
+.rsym{font-size:1.1rem;margin-bottom:2px;}
+.rn{font-size:.72rem;font-weight:700;color:#1A1240;transition:color .15s;}
+.rt{font-family:'Noto Serif Tamil',serif;font-size:.58rem;color:#8B7DB5;transition:color .15s;}
+.pred-card{background:#fff;border-radius:11px;padding:12px;border:1px solid rgba(232,101,10,.12);margin-bottom:8px;}
+.pred-title{font-size:.82rem;font-weight:700;color:#1A1240;margin-bottom:4px;}
+.pred-ta{font-family:'Noto Serif Tamil',serif;font-size:.65rem;color:#E8650A;margin-bottom:6px;}
+.pred-year{font-size:.7rem;font-weight:700;color:#8B5CF6;margin-bottom:8px;}
+.pred-section{margin-bottom:7px;}
+.pred-label{font-size:.58rem;font-weight:700;color:#8B7DB5;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;}
+.pred-text{font-size:.7rem;color:#4A3F6B;line-height:1.6;}
+.star-row{display:flex;gap:2px;margin-bottom:2px;}
+.star{color:#F5C518;font-size:.7rem;}.star.e{color:rgba(0,0,0,.15);}
+.pred-bars{display:flex;flex-direction:column;gap:4px;margin-top:6px;}
+.pbar-row{display:flex;align-items:center;gap:6px;}
+.pbar-label{font-size:.58rem;color:#4A3F6B;width:52px;flex-shrink:0;}
+.pbar-track{flex:1;height:4px;background:rgba(26,18,64,.07);border-radius:2px;overflow:hidden;}
+.pbar-fill{height:100%;border-radius:2px;transition:width .6s ease;}
 
-/* ── SECTION COMMON ── */
-section{padding:80px 24px;}
-.section-inner{max-width:1100px;margin:0 auto;}
-.section-eyebrow{font-size:0.72rem;font-weight:700;color:var(--saffron);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px;text-align:center;}
-.section-title{font-size:2rem;font-weight:700;color:var(--indigo);text-align:center;margin-bottom:12px;line-height:1.25;}
-.section-desc{font-size:1rem;color:var(--mid);text-align:center;max-width:560px;margin:0 auto 52px;line-height:1.7;}
+/* MUHURTHAM FINDER */
+.mf-form{background:#fff;border-radius:11px;padding:11px;border:1px solid rgba(232,101,10,.12);margin-bottom:8px;}
+.mf-label{font-size:.58rem;font-weight:700;color:#8B7DB5;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.mf-select{width:100%;padding:6px 8px;border:1px solid rgba(232,101,10,.2);border-radius:7px;font-size:.72rem;color:#1A1240;background:#FDF6EC;font-family:'Inter',sans-serif;margin-bottom:7px;}
+.mf-btn{width:100%;padding:8px;background:var(--ink);color:var(--gold);border:none;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;}
+.mf-btn:hover{background:var(--saffron);color:#fff;}
+.mf-result{background:#fff;border-radius:11px;padding:11px;border:1px solid rgba(16,185,129,.25);margin-bottom:8px;display:none;}
+.mf-result.show{display:block;}
+.mf-res-title{font-size:.72rem;font-weight:700;color:#065F46;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.mf-slot{background:#ECFDF5;border:1px solid #A7F3D0;border-radius:7px;padding:7px 9px;margin-bottom:5px;}
+.mf-slot-date{font-size:.7rem;font-weight:700;color:#1A1240;}
+.mf-slot-detail{font-size:.62rem;color:#4A3F6B;margin-top:1px;}
+.mf-slot-badge{font-size:.55rem;font-weight:700;color:#065F46;background:#D1FAE5;padding:1px 6px;border-radius:5px;margin-top:3px;display:inline-block;}
 
-/* ── FEATURES ── */
-.features-bg{background:var(--cream);}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.feature-card{background:white;border-radius:20px;padding:28px 24px;border:1px solid rgba(26,18,64,0.08);box-shadow:0 2px 12px rgba(26,18,64,0.05);transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;}
-.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,var(--saffron));}
-.feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,18,64,0.1);}
-.feature-icon{font-size:2rem;margin-bottom:14px;}
-.feature-title{font-size:1rem;font-weight:700;color:var(--indigo);margin-bottom:8px;}
-.feature-desc{font-size:0.85rem;color:var(--mid);line-height:1.65;}
+/* WIDGET TAB */
+.widget-preview{background:linear-gradient(135deg,#1A1240,#2D2060);border-radius:16px;padding:14px;margin-bottom:8px;position:relative;overflow:hidden;}
+.wp-title{font-size:.58rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.widget-sm{background:rgba(255,255,255,.07);border:1px solid rgba(245,197,24,.2);border-radius:12px;padding:10px;margin-bottom:6px;}
+.widget-md{background:rgba(255,255,255,.07);border:1px solid rgba(245,197,24,.2);border-radius:14px;padding:12px;}
+.wt{font-family:'Noto Serif Tamil',serif;font-size:.75rem;color:#F5C518;margin-bottom:5px;}
+.wd{font-size:.62rem;color:rgba(255,255,255,.5);margin-bottom:3px;}
+.wv{font-size:.82rem;font-weight:700;color:#fff;}
+.ws2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px;}
+.witem{text-align:center;}
+.wi-l{font-size:.52rem;color:rgba(255,255,255,.35);font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+.wi-v{font-size:.72rem;font-weight:700;color:#fff;margin-top:1px;}
+.wi-t{font-family:'Noto Serif Tamil',serif;font-size:.5rem;color:rgba(245,197,24,.5);}
+.install-steps{background:#fff;border-radius:11px;padding:11px;border:1px solid rgba(232,101,10,.12);margin-bottom:6px;}
+.is-title{font-size:.72rem;font-weight:700;color:#1A1240;margin-bottom:7px;}
+.is-step{display:flex;gap:7px;align-items:flex-start;margin-bottom:6px;}
+.is-num{width:18px;height:18px;border-radius:50%;background:var(--ink);color:var(--gold);font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.is-text{font-size:.65rem;color:#4A3F6B;line-height:1.5;}
+.wdl-btn{width:100%;padding:8px;background:var(--saffron);color:#fff;border:none;border-radius:8px;font-size:.72rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:5px;}
 
-/* ── CITIES ── */
-.cities-bg{background:linear-gradient(160deg,var(--indigo),var(--indigo2));}
-.cities-bg .section-title{color:var(--gold);}
-.cities-bg .section-desc{color:rgba(255,255,255,0.5);}
-.cities-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
-.city-pill{background:rgba(255,255,255,0.07);border:1px solid rgba(245,197,24,0.2);border-radius:30px;padding:8px 16px;font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:500;transition:all 0.2s;}
-.city-pill:hover{background:rgba(245,197,24,0.12);color:var(--gold);}
-.city-pill .flag{margin-right:5px;}
+/* FESTIVAL */
+.fest-item{background:#fff;border-radius:9px;padding:8px 10px;border:1px solid rgba(232,101,10,.1);display:flex;gap:9px;align-items:flex-start;margin-bottom:5px;}
+.fdb{border-radius:7px;padding:4px 6px;text-align:center;min-width:32px;flex-shrink:0;}
+.fd{font-size:.82rem;font-weight:700;color:#fff;line-height:1;}
+.fm{font-size:.5rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.03em;}
+.fn{font-size:.72rem;font-weight:700;color:#1A1240;}
+.fta{font-family:'Noto Serif Tamil',serif;font-size:.6rem;color:#E8650A;margin-top:1px;}
+.ftyp{font-size:.55rem;color:#8B7DB5;margin-top:1px;}
+.fnow{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.25);border-radius:5px;padding:1px 5px;font-size:.52rem;font-weight:700;color:#065F46;margin-left:4px;}
 
-/* ── INCOME / SUPPORT ── */
-.support-bg{background:var(--cream);}
-.support-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
-.support-card{background:white;border-radius:20px;padding:28px 24px;border:1px solid rgba(26,18,64,0.08);text-align:center;box-shadow:0 2px 12px rgba(26,18,64,0.05);}
-.support-card.featured{background:linear-gradient(160deg,var(--indigo),var(--indigo2));border-color:rgba(245,197,24,0.3);}
-.support-card.featured .support-title{color:var(--gold);}
-.support-card.featured .support-desc{color:rgba(255,255,255,0.55);}
-.support-icon{font-size:2.2rem;margin-bottom:14px;}
-.support-title{font-size:1.05rem;font-weight:700;color:var(--indigo);margin-bottom:8px;}
-.support-desc{font-size:0.84rem;color:var(--mid);line-height:1.6;margin-bottom:20px;}
-.support-btn{display:inline-block;padding:11px 24px;border-radius:24px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none;}
-.btn-donate{background:linear-gradient(135deg,#F59E0B,#E8650A);color:white;box-shadow:0 4px 14px rgba(232,101,10,0.3);}
-.btn-donate:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(232,101,10,0.4);}
-.btn-premium{background:var(--gold);color:var(--indigo);}
-.btn-premium:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(245,197,24,0.4);}
-.btn-ads{background:rgba(26,18,64,0.08);color:var(--indigo);}
-.btn-ads:hover{background:rgba(26,18,64,0.14);}
-.badge-soon{display:inline-block;background:rgba(245,197,24,0.15);color:var(--saffron);font-size:0.62rem;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:0.06em;margin-left:6px;vertical-align:middle;}
+/* CAL */
+.calhdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.calnv{background:#fff;border:1px solid rgba(232,101,10,.14);border-radius:5px;width:24px;height:24px;cursor:pointer;font-size:.7rem;color:#1A1240;display:flex;align-items:center;justify-content:center;}
+.calmth{font-size:.82rem;font-weight:700;color:#1A1240;}
+.calgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:3px;}
+.caldh{text-align:center;font-size:.48rem;color:#8B7DB5;padding:2px 0;font-weight:700;}
+.calday{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;transition:all .12s;position:relative;}
+.calday:hover:not(.empty){background:rgba(232,101,10,.07);}
+.calday.today{background:#E8650A;}.calday.today .cn{color:#fff;}.calday.today .ct{color:rgba(255,255,255,.65);}
+.calday.sel{background:#1A1240;}.calday.sel .cn{color:#F5C518;}.calday.sel .ct{color:rgba(245,197,24,.5);}
+.calday.hf::after{content:'';position:absolute;bottom:1px;width:3px;height:3px;border-radius:50%;background:#F5C518;}
+.cn{font-size:.66rem;font-weight:600;color:#1A1240;line-height:1;}
+.ct{font-family:'Noto Serif Tamil',serif;font-size:.42rem;color:#8B7DB5;line-height:1;margin-top:1px;}
 
-/* ── AD BANNER SECTION ── */
-.ad-banner-section{background:#F8F4FF;border-top:1px solid rgba(139,92,246,0.1);border-bottom:1px solid rgba(139,92,246,0.1);padding:24px;}
-.ad-banner-inner{max-width:1100px;margin:0 auto;text-align:center;}
-.ad-banner-label{font-size:0.62rem;color:var(--light);letter-spacing:0.1em;margin-bottom:8px;}
-.ad-banner-box{background:white;border:1px dashed rgba(139,92,246,0.25);border-radius:8px;padding:20px;min-height:90px;display:flex;align-items:center;justify-content:center;color:var(--light);font-size:0.75rem;}
+/* INFO */
+.infocard{background:#fff;border-radius:11px;padding:10px 11px;border:1px solid rgba(232,101,10,.12);margin-bottom:8px;}
+.ir{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;border-bottom:1px solid rgba(26,18,64,.05);}
+.ir:last-child{border-bottom:none;}
+.ik{font-size:.7rem;color:#4A3F6B;}
+.iv{font-size:.7rem;font-weight:600;color:#1A1240;text-align:right;}
+.tag{display:inline-flex;flex-direction:column;gap:1px;background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.16);border-radius:5px;padding:3px 6px;margin:2px;}
+.te{font-size:.58rem;color:#1A1240;font-weight:500;}
+.ta2{font-family:'Noto Serif Tamil',serif;font-size:.52rem;color:#E8650A;}
 
-/* ── DOWNLOAD ── */
-.download-bg{background:linear-gradient(160deg,var(--indigo),var(--indigo3));}
-.download-inner{text-align:center;}
-.download-title{font-family:'Noto Serif Tamil',serif;font-size:2.4rem;color:var(--gold);margin-bottom:12px;}
-.download-sub{color:rgba(255,255,255,0.55);margin-bottom:36px;font-size:1rem;}
-.store-badges{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
-.store-badge{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:14px 24px;text-decoration:none;transition:all 0.2s;}
-.store-badge:hover{background:rgba(255,255,255,0.14);transform:translateY(-2px);}
-.badge-icon{font-size:1.8rem;}
-.badge-text{}
-.badge-label{font-size:0.62rem;color:rgba(255,255,255,0.45);display:block;letter-spacing:0.05em;}
-.badge-name{font-size:1rem;font-weight:700;color:white;display:block;}
-.free-badge{display:inline-block;background:rgba(16,185,129,0.2);color:#10B981;font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:10px;margin-bottom:16px;border:1px solid rgba(16,185,129,0.3);}
+/* WEBSITE SECTIONS */
+section{padding:68px 20px;}
+.si{max-width:1100px;margin:0 auto;}
+.seye{font-size:.66rem;font-weight:700;color:var(--saffron);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;text-align:center;}
+.stitle{font-size:1.85rem;font-weight:700;color:var(--ink);text-align:center;margin-bottom:10px;line-height:1.25;}
+.sdesc{font-size:.93rem;color:var(--mid);text-align:center;max-width:520px;margin:0 auto 44px;line-height:1.72;}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.fcard{background:#fff;border-radius:16px;padding:22px 18px;border:1px solid rgba(26,18,64,.07);box-shadow:0 2px 10px rgba(26,18,64,.05);position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--fc,var(--saffron));}
+.fcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(26,18,64,.1);}
+.ficon{font-size:1.7rem;margin-bottom:11px;}
+.ftitle{font-size:.93rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.fdesc{font-size:.8rem;color:var(--mid);line-height:1.65;}
+.free-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:var(--green);font-size:.58rem;font-weight:700;padding:2px 9px;border-radius:10px;margin-left:8px;letter-spacing:.03em;}
 
-/* ── FOOTER ── */
-footer{background:var(--indigo);padding:40px 24px 24px;}
-.footer-inner{max-width:1100px;margin:0 auto;}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px;}
-.footer-brand{}
-.footer-logo{font-family:'Noto Serif Tamil',serif;font-size:1.3rem;color:var(--gold);margin-bottom:8px;}
-.footer-tagline{font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.6;}
-.footer-col h4{font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;}
-.footer-col a{display:block;color:rgba(255,255,255,0.45);font-size:0.84rem;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
-.footer-col a:hover{color:var(--gold);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.25);}
+/* RASI WEB SECTION */
+.rasi-web-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:32px;}
+.rwcard{background:#fff;border-radius:14px;padding:16px 12px;border:1px solid rgba(26,18,64,.07);text-align:center;cursor:pointer;transition:all .2s;}
+.rwcard:hover,.rwcard.active{background:var(--ink);transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,18,64,.15);}
+.rwcard:hover .rwn,.rwcard.active .rwn{color:var(--gold);}
+.rwcard:hover .rwt,.rwcard.active .rwt{color:rgba(245,197,24,.5);}
+.rwsym{font-size:1.6rem;margin-bottom:6px;}
+.rwn{font-size:.82rem;font-weight:700;color:var(--ink);transition:color .2s;}
+.rwt{font-family:'Noto Serif Tamil',serif;font-size:.65rem;color:var(--light);transition:color .2s;}
+.rpanel{background:#fff;border-radius:20px;padding:28px;border:1px solid rgba(26,18,64,.08);box-shadow:0 4px 20px rgba(26,18,64,.06);display:none;}
+.rpanel.show{display:block;}
 
-/* ── RESPONSIVE ── */
-@media(max-width:768px){
-  .hero-inner{grid-template-columns:1fr;gap:36px;}
-  .hero-title{font-size:2rem;}
-  .features-grid,.support-grid{grid-template-columns:1fr;}
-  .footer-top{grid-template-columns:1fr;}
-  .nav-links{display:none;}
-  .live-card{display:none;}
-}
-@media(max-width:480px){
-  .hero-title{font-size:1.7rem;}
-  section{padding:56px 20px;}
-}
+/* MUHURTHAM WEB */
+.mf-web{background:#fff;border-radius:20px;padding:28px;border:1px solid rgba(26,18,64,.08);box-shadow:0 4px 20px rgba(26,18,64,.06);}
+.mfw-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+.mfw-field{display:flex;flex-direction:column;gap:6px;}
+.mfw-label{font-size:.72rem;font-weight:700;color:var(--mid);letter-spacing:.04em;}
+.mfw-select{padding:10px 12px;border:1px solid rgba(26,18,64,.12);border-radius:10px;font-size:.88rem;color:var(--ink);background:#fff;font-family:'Inter',sans-serif;}
+.mfw-btn{background:var(--ink);color:var(--gold);border:none;border-radius:12px;padding:12px 28px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;}
+.mfw-btn:hover{background:var(--saffron);color:#fff;transform:translateY(-1px);}
+.mfw-results{margin-top:24px;display:none;}
+.mfw-results.show{display:block;}
+.mfw-slot{background:var(--cream);border-radius:12px;padding:14px 16px;border:1px solid rgba(16,185,129,.2);margin-bottom:10px;display:flex;gap:14px;align-items:flex-start;}
+.mfw-rank{background:var(--green);color:#fff;font-size:.75rem;font-weight:700;padding:4px 9px;border-radius:8px;flex-shrink:0;}
+.mfw-rank.s{background:var(--saffron);}
+.mfw-rank.t{background:var(--purple);}
+
+/* WIDGET WEB */
+.wid-web{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.wid-preview-wrap{background:linear-gradient(155deg,#1A1240,#2D2060);border-radius:20px;padding:24px;}
+.wid-ptitle{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.widget-2x2{background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.2);border-radius:18px;padding:16px;margin-bottom:12px;}
+.widget-4x2{background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.2);border-radius:18px;padding:16px;}
+.w2title{font-family:'Noto Serif Tamil',serif;font-size:.9rem;color:#F5C518;margin-bottom:10px;}
+.w2grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.w2item{text-align:center;background:rgba(255,255,255,.05);border-radius:10px;padding:8px 4px;}
+.w2il{font-size:.58rem;color:rgba(255,255,255,.35);font-weight:600;text-transform:uppercase;}
+.w2iv{font-size:.82rem;font-weight:700;color:#fff;margin-top:2px;}
+.w2it{font-family:'Noto Serif Tamil',serif;font-size:.52rem;color:rgba(245,197,24,.45);}
+.w4row{display:flex;gap:10px;margin-top:8px;}
+.w4item{flex:1;text-align:center;}
+.wid-steps{background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(26,18,64,.08);}
+.wid-steps h3{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:14px;}
+.wstep{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;}
+.wstepnum{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--gold);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.wsteptxt{font-size:.82rem;color:var(--mid);line-height:1.55;}
+.wsteptxt strong{color:var(--ink);}
+.wdl-web{display:inline-flex;align-items:center;gap:8px;background:var(--saffron);color:#fff;padding:12px 22px;border-radius:26px;font-weight:700;font-size:.88rem;text-decoration:none;margin-top:14px;transition:all .2s;}
+.wdl-web:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(232,101,10,.35);}
+
+/* CITIES */
+.citybg{background:linear-gradient(150deg,var(--ink),var(--ink2));}
+.citybg .stitle{color:var(--gold);}
+.citybg .sdesc{color:rgba(255,255,255,.42);}
+.cities{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.city{background:rgba(255,255,255,.07);border:1px solid rgba(245,197,24,.17);border-radius:22px;padding:6px 13px;font-size:.78rem;color:rgba(255,255,255,.6);font-weight:500;transition:all .2s;}
+.city:hover{background:rgba(245,197,24,.11);color:var(--gold);}
+
+/* FEST WEB */
+.fwgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.fwcard{background:#fff;border-radius:14px;padding:16px;border:1px solid rgba(26,18,64,.07);display:flex;gap:12px;transition:transform .2s;}
+.fwcard:hover{transform:translateY(-2px);}
+.fwdate{border-radius:9px;padding:8px 9px;text-align:center;min-width:42px;flex-shrink:0;}
+.fwd{font-size:1.2rem;font-weight:700;color:#fff;line-height:1;}
+.fwm{font-size:.58rem;color:rgba(255,255,255,.7);text-transform:uppercase;}
+.fwname{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:2px;}
+.fwta{font-family:'Noto Serif Tamil',serif;font-size:.72rem;color:var(--saffron);margin-bottom:3px;}
+.fwdesc{font-size:.75rem;color:var(--mid);line-height:1.5;}
+.fwtype{font-size:.6rem;font-weight:600;color:var(--saffron);background:rgba(232,101,10,.07);padding:2px 7px;border-radius:7px;margin-top:5px;display:inline-block;}
+
+/* AD */
+.adstrip{background:#F8F4FF;border-top:1px solid rgba(139,92,246,.1);border-bottom:1px solid rgba(139,92,246,.1);padding:18px;}
+.adin{max-width:1100px;margin:0 auto;text-align:center;}
+.adlbl{font-size:.58rem;color:var(--light);letter-spacing:.1em;margin-bottom:5px;}
+.adbox{background:#fff;border:1px dashed rgba(139,92,246,.2);border-radius:8px;padding:16px;min-height:70px;display:flex;align-items:center;justify-content:center;color:var(--light);font-size:.72rem;}
+
+/* DL */
+.dlbg{background:linear-gradient(150deg,var(--ink),#3D2A80);}
+.dlin{text-align:center;}
+.dltitle{font-family:'Noto Serif Tamil',serif;font-size:2.1rem;color:var(--gold);margin-bottom:10px;}
+.dlsub{color:rgba(255,255,255,.45);margin-bottom:28px;font-size:.92rem;}
+.dlbadges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.dlb{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:13px;padding:12px 20px;text-decoration:none;transition:all .2s;}
+.dlb:hover{background:rgba(255,255,255,.13);transform:translateY(-2px);}
+.dlbi{font-size:1.5rem;}
+.dlbl{font-size:.56rem;color:rgba(255,255,255,.38);display:block;letter-spacing:.04em;}
+.dlbn{font-size:.88rem;font-weight:700;color:#fff;display:block;}
+footer{background:var(--ink);padding:32px 20px 18px;}
+.ftin{max-width:1100px;margin:0 auto;}
+.fttop{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:24px;}
+.ftlogo{font-family:'Noto Serif Tamil',serif;font-size:1.1rem;color:var(--gold);margin-bottom:6px;}
+.fttag{font-size:.78rem;color:rgba(255,255,255,.28);line-height:1.6;}
+.ftcol h4{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:11px;}
+.ftcol a{display:block;color:rgba(255,255,255,.38);font-size:.8rem;text-decoration:none;margin-bottom:6px;transition:color .2s;}
+.ftcol a:hover{color:var(--gold);}
+.ftbot{border-top:1px solid rgba(255,255,255,.06);padding-top:16px;display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,255,255,.2);}
+
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@media(max-width:900px){.hero-in{grid-template-columns:1fr;}.phone-wrap{display:none;}.fgrid,.wid-web,.mfw-grid{grid-template-columns:1fr;}.rasi-web-grid{grid-template-columns:repeat(4,1fr);}.fwgrid{grid-template-columns:1fr;}.fttop{grid-template-columns:1fr;}.nlinks{display:none;}}
+@media(max-width:480px){.rasi-web-grid{grid-template-columns:repeat(3,1fr);}section{padding:48px 14px;}.stitle{font-size:1.5rem;}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      தமிழ் பஞ்சாங்கம்
-      <span>Tamil Panchangam</span>
-    </a>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#cities">Cities</a>
-      <a href="#support">Support Us</a>
+  <div class="ni">
+    <a href="#" class="nlogo">தமிழ் பஞ்சாங்கம் <small>tamilvaram.com · 100% Free</small></a>
+    <div class="nlinks">
+      <a href="#app">Panchangam</a>
+      <a href="#rasi">Rasi</a>
+      <a href="#muhurtham">Muhurtham</a>
+      <a href="#widget">Widget</a>
+      <a href="#festivals">Festivals</a>
       <a href="privacy-policy.html">Privacy</a>
-      <a href="#download" class="nav-cta">📲 Free Download</a>
+      <a href="#download" class="ncta">📲 Download</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg" id="starField"></div>
-  <canvas id="kolam" width="700" height="700"></canvas>
-
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-eyebrow">Daily Vedic Almanac · Worldwide</div>
-      <div class="hero-title">தமிழ் பஞ்சாங்கம்</div>
-      <div class="hero-subtitle">Tamil Panchangam for <strong>every Tamil home on earth</strong></div>
-      <div class="hero-desc">Accurate Tithi, Nakshatram, Rahu Kalam and Muhurtham times — calculated for your exact city. Free. No ads. No account.</div>
-      <div class="hero-btns">
-        <a href="https://play.google.com/store/apps/details?id=com.tamilvaram.panchangam" class="btn-primary" target="_blank">
-          🤖 Get it on Google Play
-        </a>
-        <a href="#" class="btn-secondary">
-          🍎 App Store — Coming Soon
-        </a>
+<div class="hero">
+  <canvas id="stars"></canvas>
+  <div class="hero-in">
+    <div>
+      <div class="free-tag">✓ 100% Free · No Account · No Ads in App</div>
+      <div class="htag">Daily Vedic Almanac · Worldwide</div>
+      <div class="htitle">தமிழ் பஞ்சாங்கம்</div>
+      <div class="hsub">Tamil Panchangam for <strong>every Tamil home on earth</strong></div>
+      <div class="hdesc">Daily Tithi, Nakshatram, Rahu Kalam, Muhurtham Finder, Yearly Rasi Predictions and Home Screen Widget — all completely free.</div>
+      <div class="hbtns">
+        <a href="#app" class="bp">✨ Use It Free Now</a>
+        <a href="https://play.google.com/store/apps/details?id=com.tamilvaram.panchangam" class="bs" target="_blank">🤖 Google Play</a>
       </div>
     </div>
+    <div class="phone-wrap">
+      <div class="pshell"><div class="pnotch"></div><div class="pscreen" id="appRoot"></div></div>
+    </div>
+  </div>
+</div>
 
-    <!-- Live Panchangam Preview -->
-    <div class="live-card">
-      <div class="live-header">
-        <div class="live-title">Today's Panchangam</div>
-        <div class="live-dot">Live</div>
-      </div>
-      <div class="panca-grid">
-        <div class="panca-item">
-          <div class="panca-label">🌙 Tithi</div>
-          <div class="panca-val" id="hw-tithi">—</div>
-          <div class="panca-sub" id="hw-paksha">—</div>
+<!-- AD -->
+<div class="adstrip"><div class="adin"><div class="adlbl">ADVERTISEMENT</div><div class="adbox"><!-- Google AdSense 728×90 here --></div></div></div>
+
+<!-- LIVE APP EMBED -->
+<section id="app" style="background:#fff;padding:56px 20px;">
+  <div class="si">
+    <div class="seye">Use it free — right here</div>
+    <h2 class="stitle">Today's Tamil Panchangam</h2>
+    <p class="sdesc">Full Panchangam with Rahu Kalam, festivals, Muhurtham finder, Rasi predictions and home screen widget — all working live.</p>
+    <div style="display:flex;justify-content:center;">
+      <div style="width:100%;max-width:460px;background:#FDF6EC;border-radius:22px;overflow:hidden;box-shadow:0 8px 40px rgba(26,18,64,.11);border:1px solid rgba(232,101,10,.1);" id="webApp"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RASI PREDICTIONS -->
+<section id="rasi" style="background:var(--cream);">
+  <div class="si">
+    <div class="seye">Yearly Predictions · 2026</div>
+    <h2 class="stitle">Rasi Palan <span class="free-pill">FREE</span></h2>
+    <p class="sdesc">Select your Rasi to see your 2026 yearly predictions for career, health, love, finance and family.</p>
+    <div class="rasi-web-grid" id="rasiWebGrid"></div>
+    <div class="rpanel" id="rasiPanel"></div>
+  </div>
+</section>
+
+<!-- AD -->
+<div class="adstrip"><div class="adin"><div class="adlbl">ADVERTISEMENT</div><div class="adbox"><!-- Google AdSense here --></div></div></div>
+
+<!-- MUHURTHAM FINDER -->
+<section id="muhurtham" style="background:#fff;">
+  <div class="si">
+    <div class="seye">Find the perfect time</div>
+    <h2 class="stitle">Muhurtham Finder <span class="free-pill">FREE</span></h2>
+    <p class="sdesc">Find the most auspicious date and time for your wedding, housewarming, travel, business launch or any life event.</p>
+    <div class="mf-web">
+      <div class="mfw-grid">
+        <div class="mfw-field"><div class="mfw-label">Occasion Type</div>
+          <select id="mfOccasion" class="mfw-select">
+            <option value="wedding">💒 Wedding (Kalyanam)</option>
+            <option value="griha">🏠 Housewarming (Griha Pravesh)</option>
+            <option value="travel">✈️ Travel (Yatra)</option>
+            <option value="business">💼 Business Launch</option>
+            <option value="vehicle">🚗 Vehicle Purchase</option>
+            <option value="education">📚 Education / New Course</option>
+            <option value="surgery">🏥 Medical Procedure</option>
+            <option value="naming">👶 Baby Naming (Namakarana)</option>
+          </select>
         </div>
-        <div class="panca-item">
-          <div class="panca-label">⭐ Nakshatram</div>
-          <div class="panca-val" id="hw-naksh">—</div>
-          <div class="panca-sub" id="hw-rasi">—</div>
+        <div class="mfw-field"><div class="mfw-label">Preferred Month</div>
+          <select id="mfMonth" class="mfw-select">
+            <option value="6">July 2026</option>
+            <option value="7">August 2026</option>
+            <option value="8">September 2026</option>
+            <option value="9">October 2026</option>
+            <option value="10">November 2026</option>
+            <option value="11">December 2026</option>
+          </select>
         </div>
-        <div class="panca-item">
-          <div class="panca-label">📆 Vaaram</div>
-          <div class="panca-val" id="hw-day">—</div>
-          <div class="panca-sub" id="hw-ruler">—</div>
+        <div class="mfw-field"><div class="mfw-label">Preferred Day</div>
+          <select id="mfDay" class="mfw-select">
+            <option value="any">Any day</option>
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+          </select>
         </div>
-        <div class="panca-item">
-          <div class="panca-label">🪷 Yogam</div>
-          <div class="panca-val" id="hw-yogam">—</div>
-          <div class="panca-sub" id="hw-yogq">—</div>
+        <div class="mfw-field"><div class="mfw-label">Your Rasi (optional)</div>
+          <select id="mfRasi" class="mfw-select">
+            <option value="">Any Rasi</option>
+            <option value="0">Mesha (Aries)</option>
+            <option value="1">Rishabha (Taurus)</option>
+            <option value="2">Mithuna (Gemini)</option>
+            <option value="3">Kataka (Cancer)</option>
+            <option value="4">Simha (Leo)</option>
+            <option value="5">Kanya (Virgo)</option>
+            <option value="6">Thula (Libra)</option>
+            <option value="7">Vrishchika (Scorpio)</option>
+            <option value="8">Dhanu (Sagittarius)</option>
+            <option value="9">Makara (Capricorn)</option>
+            <option value="10">Kumbha (Aquarius)</option>
+            <option value="11">Meena (Pisces)</option>
+          </select>
         </div>
       </div>
-      <div class="kalam-row" style="margin-top:12px;">
-        <div class="kalam-dot"></div>
-        <div class="kalam-label">Rahu Kalam today</div>
-        <div class="kalam-time" id="hw-rahu">—</div>
+      <button class="mfw-btn" onclick="findMuhurtham()">🔍 Find Auspicious Dates</button>
+      <div class="mfw-results" id="mfwResults"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WIDGET -->
+<section id="widget" style="background:var(--cream);">
+  <div class="si">
+    <div class="seye">Home Screen Widget</div>
+    <h2 class="stitle">Tamil Panchangam Widget <span class="free-pill">FREE</span></h2>
+    <p class="sdesc">Add a live Panchangam widget to your phone's home screen — see today's Tithi, Nakshatram and Rahu Kalam at a glance.</p>
+    <div class="wid-web">
+      <div class="wid-preview-wrap">
+        <div class="wid-ptitle">Widget Preview</div>
+        <div class="wid-ptitle" style="margin-bottom:8px;font-size:.6rem;">Small (2×2)</div>
+        <div class="widget-2x2">
+          <div class="w2title">தமிழ் பஞ்சாங்கம்</div>
+          <div class="w2grid">
+            <div class="w2item"><div class="w2il">Tithi</div><div class="w2iv" id="wTithi">—</div></div>
+            <div class="w2item"><div class="w2il">Star</div><div class="w2iv" id="wNaksh">—</div></div>
+            <div class="w2item"><div class="w2il">Rahu</div><div class="w2iv" style="color:#EF4444;font-size:.68rem;" id="wRahu">—</div></div>
+            <div class="w2item"><div class="w2il">Yogam</div><div class="w2iv" id="wYogam">—</div></div>
+          </div>
+        </div>
+        <div class="wid-ptitle" style="margin-bottom:8px;font-size:.6rem;">Wide (4×2)</div>
+        <div class="widget-4x2">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <div class="w2title" style="margin:0">தமிழ் பஞ்சாங்கம்</div>
+            <div style="font-size:.6rem;color:rgba(245,197,24,.4)" id="wDate">—</div>
+          </div>
+          <div class="w4row">
+            <div class="w4item"><div class="w2il">Tithi</div><div class="w2iv" id="wTithi2">—</div></div>
+            <div class="w4item"><div class="w2il">Nakshatram</div><div class="w2iv" id="wNaksh2">—</div></div>
+            <div class="w4item"><div class="w2il">Rahu Kalam</div><div class="w2iv" style="color:#EF4444;font-size:.68rem;" id="wRahu2">—</div></div>
+            <div class="w4item"><div class="w2il">Muhurtham</div><div class="w2iv" style="color:#10B981;font-size:.65rem;">Noon ±24min</div></div>
+          </div>
+        </div>
       </div>
-      <div class="kalam-row good-row">
-        <div class="kalam-dot"></div>
-        <div class="kalam-label">Abhijit Muhurtham</div>
-        <div class="kalam-time">Solar noon ±24 min</div>
-      </div>
-      <!-- Ad slot inside card -->
-      <div class="ad-slot">
-        <!-- Google AdSense unit goes here -->
-        <span class="ad-placeholder">ADVERTISEMENT</span>
+      <div>
+        <div class="wid-steps">
+          <h3>📱 How to add the widget</h3>
+          <div class="wstep"><div class="wstepnum">1</div><div class="wsteptxt"><strong>Download the app</strong> from Google Play (free). Install and open it once to complete setup.</div></div>
+          <div class="wstep"><div class="wstepnum">2</div><div class="wsteptxt"><strong>Long-press your home screen</strong> on Android until the screen wobbles and you see "Widgets" at the bottom.</div></div>
+          <div class="wstep"><div class="wstepnum">3</div><div class="wsteptxt"><strong>Tap "Widgets"</strong> → scroll to find <em>Tamil Panchangam</em> in the list.</div></div>
+          <div class="wstep"><div class="wstepnum">4</div><div class="wsteptxt"><strong>Choose your size</strong> — Small (2×2) shows Tithi and Rahu Kalam. Wide (4×2) shows all five elements.</div></div>
+          <div class="wstep"><div class="wstepnum">5</div><div class="wsteptxt"><strong>Drag to your home screen</strong> and release. The widget updates automatically every day at sunrise.</div></div>
+          <a href="https://play.google.com/store/apps/details?id=com.tamilvaram.panchangam" class="wdl-web" target="_blank">🤖 Download Free on Google Play</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AD BANNER (leaderboard) -->
-<div class="ad-banner-section">
-  <div class="ad-banner-inner">
-    <div class="ad-banner-label">ADVERTISEMENT</div>
-    <div class="ad-banner-box">
-      <!-- Paste Google AdSense leaderboard (728×90) code here -->
-      Google AdSense Banner — 728×90 — paste your AdSense code here after approval
-    </div>
+<!-- FESTIVALS -->
+<section id="festivals" style="background:#fff;">
+  <div class="si">
+    <div class="seye">2026 Tamil Calendar</div>
+    <h2 class="stitle">Tamil Festivals & Holidays</h2>
+    <p class="sdesc">Major Tamil festivals, public holidays and auspicious days — with Tamil names and descriptions.</p>
+    <div class="fwgrid" id="festWebGrid"></div>
   </div>
-</div>
+</section>
 
 <!-- FEATURES -->
-<section class="features-bg" id="features">
-  <div class="section-inner">
-    <div class="section-eyebrow">What's inside</div>
-    <h2 class="section-title">Everything you need, every day</h2>
-    <p class="section-desc">Five Panchangam elements, accurate local timings, and a full Tamil calendar — all in one clean app.</p>
-
-    <div class="features-grid">
-      <div class="feature-card" style="--accent:#E8650A">
-        <div class="feature-icon">🌙</div>
-        <div class="feature-title">Five Panchangam Angas</div>
-        <div class="feature-desc">Tithi, Vaaram, Nakshatram, Yogam and Karanam calculated fresh every day using precise lunar and solar algorithms.</div>
-      </div>
-      <div class="feature-card" style="--accent:#EF4444">
-        <div class="feature-icon">⚠️</div>
-        <div class="feature-title">Rahu Kalam & Inauspicious Times</div>
-        <div class="feature-desc">Rahu Kalam, Gulikai and Yamagandam calculated from your actual local sunrise — not a fixed Chennai time applied everywhere.</div>
-      </div>
-      <div class="feature-card" style="--accent:#10B981">
-        <div class="feature-icon">✨</div>
-        <div class="feature-title">Auspicious Muhurthams</div>
-        <div class="feature-desc">Abhijit, Brahma Muhurtham, Amruta Kalam and more — with plain English descriptions of what each is good for.</div>
-      </div>
-      <div class="feature-card" style="--accent:#F5C518">
-        <div class="feature-icon">☀️</div>
-        <div class="feature-title">Live Sunrise Tracker</div>
-        <div class="feature-desc">Visual arc showing exactly where the sun is right now between your local sunrise and sunset.</div>
-      </div>
-      <div class="feature-card" style="--accent:#8B5CF6">
-        <div class="feature-icon">🗓</div>
-        <div class="feature-title">Tamil Calendar</div>
-        <div class="feature-desc">Full monthly calendar with Tamil date numbers on every day. Tap any date to see its Tithi, Nakshatram and Yogam.</div>
-      </div>
-      <div class="feature-card" style="--accent:#0EA5E9">
-        <div class="feature-icon">📍</div>
-        <div class="feature-title">Works Worldwide</div>
-        <div class="feature-desc">GPS auto-detection or choose from 23 cities across India, Southeast Asia, Europe, Americas, Africa and Oceania.</div>
-      </div>
+<section style="background:var(--cream);">
+  <div class="si">
+    <div class="seye">Everything inside · All free</div>
+    <h2 class="stitle">No subscriptions. No paywalls. Ever.</h2>
+    <p class="sdesc">Every feature is completely free for every Tamil family everywhere in the world.</p>
+    <div class="fgrid">
+      <div class="fcard" style="--fc:#E8650A"><div class="ficon">🌙</div><div class="ftitle">Five Panchangam Angas</div><div class="fdesc">Tithi, Vaaram, Nakshatram, Yogam and Karanam daily — calculated with precise lunar and solar algorithms.</div></div>
+      <div class="fcard" style="--fc:#EF4444"><div class="ficon">⚠️</div><div class="ftitle">Rahu Kalam & Timings</div><div class="fdesc">Rahu Kalam, Gulikai and Yamagandam from your actual local sunrise — not fixed Chennai time.</div></div>
+      <div class="fcard" style="--fc:#8B5CF6"><div class="ficon">🔮</div><div class="ftitle">Yearly Rasi Predictions</div><div class="fdesc">2026 predictions for all 12 Rasis — career, health, love, finance and family. Updated yearly.</div></div>
+      <div class="fcard" style="--fc:#10B981"><div class="ficon">✨</div><div class="ftitle">Muhurtham Finder</div><div class="fdesc">Find the most auspicious dates for weddings, housewarming, travel, business launch and more.</div></div>
+      <div class="fcard" style="--fc:#F5C518"><div class="ficon">📱</div><div class="ftitle">Home Screen Widget</div><div class="fdesc">Live Panchangam widget in two sizes — see Tithi, Nakshatram and Rahu Kalam without opening the app.</div></div>
+      <div class="fcard" style="--fc:#0EA5E9"><div class="ficon">📍</div><div class="ftitle">Works Worldwide</div><div class="fdesc">GPS auto-detection or choose from 23 cities. Accurate local times for every city on earth.</div></div>
     </div>
   </div>
 </section>
 
 <!-- CITIES -->
-<section class="cities-bg" id="cities">
-  <div class="section-inner">
-    <div class="section-eyebrow" style="color:var(--saffron)">23 cities & growing</div>
-    <h2 class="section-title">Wherever Tamil families live</h2>
-    <p class="section-desc">From Madurai to Melbourne, Coimbatore to Chicago — accurate local timings for every city.</p>
-    <div class="cities-grid">
-      <div class="city-pill"><span class="flag">🇮🇳</span>Chennai</div>
-      <div class="city-pill"><span class="flag">🇮🇳</span>Mumbai</div>
-      <div class="city-pill"><span class="flag">🇮🇳</span>Bangalore</div>
-      <div class="city-pill"><span class="flag">🇮🇳</span>Delhi</div>
-      <div class="city-pill"><span class="flag">🇮🇳</span>Coimbatore</div>
-      <div class="city-pill"><span class="flag">🇮🇳</span>Madurai</div>
-      <div class="city-pill"><span class="flag">🇱🇰</span>Colombo</div>
-      <div class="city-pill"><span class="flag">🇸🇬</span>Singapore</div>
-      <div class="city-pill"><span class="flag">🇲🇾</span>Kuala Lumpur</div>
-      <div class="city-pill"><span class="flag">🇦🇪</span>Dubai</div>
-      <div class="city-pill"><span class="flag">🇬🇧</span>London</div>
-      <div class="city-pill"><span class="flag">🇫🇷</span>Paris</div>
-      <div class="city-pill"><span class="flag">🇩🇪</span>Frankfurt</div>
-      <div class="city-pill"><span class="flag">🇺🇸</span>New York</div>
-      <div class="city-pill"><span class="flag">🇺🇸</span>Chicago</div>
-      <div class="city-pill"><span class="flag">🇺🇸</span>Los Angeles</div>
-      <div class="city-pill"><span class="flag">🇺🇸</span>San Francisco</div>
-      <div class="city-pill"><span class="flag">🇨🇦</span>Toronto</div>
-      <div class="city-pill"><span class="flag">🇦🇺</span>Sydney</div>
-      <div class="city-pill"><span class="flag">🇦🇺</span>Melbourne</div>
-      <div class="city-pill"><span class="flag">🇳🇿</span>Auckland</div>
-      <div class="city-pill"><span class="flag">🇿🇦</span>Johannesburg</div>
-      <div class="city-pill"><span class="flag">🇰🇪</span>Nairobi</div>
+<section class="citybg">
+  <div class="si">
+    <div class="seye" style="color:var(--saffron)">23 cities and growing</div>
+    <h2 class="stitle">Wherever Tamil families live</h2>
+    <p class="sdesc">Accurate local timings for Tamil communities from Madurai to Melbourne.</p>
+    <div class="cities">
+      <div class="city">🇮🇳 Chennai</div><div class="city">🇮🇳 Mumbai</div><div class="city">🇮🇳 Bangalore</div><div class="city">🇮🇳 Delhi</div><div class="city">🇮🇳 Coimbatore</div><div class="city">🇮🇳 Madurai</div><div class="city">🇱🇰 Colombo</div><div class="city">🇸🇬 Singapore</div><div class="city">🇲🇾 Kuala Lumpur</div><div class="city">🇦🇪 Dubai</div><div class="city">🇬🇧 London</div><div class="city">🇫🇷 Paris</div><div class="city">🇩🇪 Frankfurt</div><div class="city">🇺🇸 New York</div><div class="city">🇺🇸 Chicago</div><div class="city">🇺🇸 Los Angeles</div><div class="city">🇨🇦 Toronto</div><div class="city">🇦🇺 Sydney</div><div class="city">🇦🇺 Melbourne</div><div class="city">🇳🇿 Auckland</div><div class="city">🇿🇦 Johannesburg</div><div class="city">🇰🇪 Nairobi</div>
     </div>
   </div>
 </section>
-
-<!-- SUPPORT / INCOME -->
-<section class="support-bg" id="support">
-  <div class="section-inner">
-    <div class="section-eyebrow">Keep it free for everyone</div>
-    <h2 class="section-title">Support Tamil Panchangam</h2>
-    <p class="section-desc">The app is free with no ads. If it saves you time every day, consider supporting its development.</p>
-
-    <div class="support-grid">
-      <!-- Donation -->
-      <div class="support-card">
-        <div class="support-icon">☕</div>
-        <div class="support-title">Buy Us a Coffee</div>
-        <div class="support-desc">A one-time contribution keeps the servers running and helps us add more cities and features.</div>
-        <!-- Replace href with your Buy Me a Coffee or Razorpay link -->
-        <a href="https://buymeacoffee.com/tamilvaram" target="_blank" class="support-btn btn-donate">☕ Donate ₹99 / $2</a>
-      </div>
-
-      <!-- Premium — future -->
-      <div class="support-card featured">
-        <div class="support-icon">⭐</div>
-        <div class="support-title">Premium <span class="badge-soon">COMING SOON</span></div>
-        <div class="support-desc">Unlock festival calendar, marriage muhurtham finder, yearly Rasi predictions, and widget support.</div>
-        <a href="#" class="support-btn btn-premium">Get Premium — ₹299/yr</a>
-      </div>
-
-      <!-- Advertise -->
-      <div class="support-card">
-        <div class="support-icon">📣</div>
-        <div class="support-title">Advertise Here</div>
-        <div class="support-desc">Reach Tamil families worldwide. Temple events, gold jewellery, travel, and cultural services welcome.</div>
-        <a href="mailto:support@tamilvaram.com?subject=Advertising Enquiry" class="support-btn btn-ads">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AD BANNER 2 -->
-<div class="ad-banner-section">
-  <div class="ad-banner-inner">
-    <div class="ad-banner-label">ADVERTISEMENT</div>
-    <div class="ad-banner-box">
-      <!-- Paste second Google AdSense unit here -->
-      Google AdSense Banner — paste your AdSense code here after approval
-    </div>
-  </div>
-</div>
 
 <!-- DOWNLOAD -->
-<section class="download-bg" id="download">
-  <div class="section-inner download-inner">
-    <div class="free-badge">✓ Completely Free · No Ads in App · No Account Needed</div>
-    <div class="download-title">தமிழ் பஞ்சாங்கம்</div>
-    <div class="download-sub">Download now and check today's Panchangam in seconds</div>
-    <div class="store-badges">
-      <a href="https://play.google.com/store/apps/details?id=com.tamilvaram.panchangam" class="store-badge" target="_blank">
-        <div class="badge-icon">🤖</div>
-        <div class="badge-text">
-          <span class="badge-label">GET IT ON</span>
-          <span class="badge-name">Google Play</span>
-        </div>
-      </a>
-      <a href="#" class="store-badge" style="opacity:0.5;cursor:not-allowed;">
-        <div class="badge-icon">🍎</div>
-        <div class="badge-text">
-          <span class="badge-label">COMING SOON ON</span>
-          <span class="badge-name">App Store</span>
-        </div>
-      </a>
+<section class="dlbg" id="download">
+  <div class="si dlin">
+    <div class="free-tag" style="justify-content:center;margin-bottom:14px;">✓ Completely Free · No Ads · No Account</div>
+    <div class="dltitle">தமிழ் பஞ்சாங்கம்</div>
+    <div class="dlsub">Download and check today's Panchangam in seconds</div>
+    <div class="dlbadges">
+      <a href="https://play.google.com/store/apps/details?id=com.tamilvaram.panchangam" class="dlb" target="_blank"><div class="dlbi">🤖</div><div><span class="dlbl">GET IT ON</span><span class="dlbn">Google Play</span></div></a>
+      <a href="#" class="dlb" style="opacity:.4;cursor:not-allowed;"><div class="dlbi">🍎</div><div><span class="dlbl">COMING SOON</span><span class="dlbn">App Store</span></div></a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">தமிழ் பஞ்சாங்கம்</div>
-        <div class="footer-tagline">Daily Vedic almanac for Tamil communities worldwide.<br/>Free forever. Accurate for every city on earth.</div>
-      </div>
-      <div class="footer-col">
-        <h4>App</h4>
-        <a href="https://play.google.com/store/apps/details?id=com.tamilvaram.panchangam" target="_blank">Google Play</a>
-        <a href="#">App Store (soon)</a>
-        <a href="#features">Features</a>
-        <a href="#cities">Cities</a>
-      </div>
-      <div class="footer-col">
-        <h4>Info</h4>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="mailto:support@tamilvaram.com">Contact</a>
-        <a href="#support">Support Us</a>
-        <a href="mailto:support@tamilvaram.com?subject=Advertising">Advertise</a>
-      </div>
+  <div class="ftin">
+    <div class="fttop">
+      <div><div class="ftlogo">தமிழ் பஞ்சாங்கம்</div><div class="fttag">Free daily Vedic almanac for Tamil communities worldwide.<br/>Every feature free. Always.</div></div>
+      <div class="ftcol"><h4>Features</h4><a href="#app">Daily Panchangam</a><a href="#rasi">Rasi Predictions</a><a href="#muhurtham">Muhurtham Finder</a><a href="#widget">Home Widget</a><a href="#festivals">Festivals</a></div>
+      <div class="ftcol"><h4>Info</h4><a href="privacy-policy.html">Privacy Policy</a><a href="mailto:support@tamilvaram.com">Contact</a><a href="mailto:support@tamilvaram.com?subject=Advertising">Advertise</a></div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Tamil Varam. All rights reserved.</span>
-      <span>Made with 🙏 for Tamil communities worldwide</span>
-    </div>
+    <div class="ftbot"><span>© 2026 Tamil Varam. All rights reserved.</span><span>Made with 🙏 for Tamil communities worldwide</span></div>
   </div>
 </footer>
 
 <script>
-// ── STARS ──────────────────────────────────────────────
-const sf = document.getElementById('starField');
-for (let i = 0; i < 80; i++) {
-  const s = document.createElement('div');
-  s.className = 'star';
-  const size = Math.random() * 2 + 1;
-  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*4}s;--op:${0.3+Math.random()*0.6}`;
-  sf.appendChild(s);
-}
+// ══════════════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════════════
+const DAYS_EN=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const RULERS=["Sun (Surya)","Moon (Chandra)","Mars (Chevvai)","Mercury (Budhan)","Jupiter (Guru)","Venus (Sukra)","Saturn (Sani)"];
+const NAKSH_EN=["Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra","Punarvasu","Pushya","Ashlesha","Magha","Purva Phalguni","Uttara Phalguni","Hasta","Chitra","Swati","Vishakha","Anuradha","Jyeshtha","Mula","Purva Ashadha","Uttara Ashadha","Shravana","Dhanishtha","Shatabhisha","Purva Bhadra","Uttara Bhadra","Revati"];
+const NAKSH_TA=["அஸ்வினி","பரணி","கார்த்திகை","ரோகிணி","மிருகசீர்ஷம்","திருவாதிரை","புனர்பூசம்","பூசம்","ஆயில்யம்","மகம்","பூரம்","உத்திரம்","ஹஸ்தம்","சித்திரை","சுவாதி","விசாகம்","அனுஷம்","கேட்டை","மூலம்","பூராடம்","உத்திராடம்","திருவோணம்","அவிட்டம்","சதயம்","பூரட்டாதி","உத்திரட்டாதி","ரேவதி"];
+const TITHI_EN=["Prathama","Dvitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dvadashi","Trayodashi","Chaturdashi","Purnima/Amavasya"];
+const TITHI_TA=["பிரதமை","துவிதியை","திருதியை","சதுர்த்தி","பஞ்சமி","ஷஷ்டி","சப்தமி","அஷ்டமி","நவமி","தசமி","ஏகாதசி","துவாதசி","திரயோதசி","சதுர்தசி","பௌர்ணமி/அமாவாசை"];
+const YOGAM_EN=["Vishkambha","Priti","Ayushman","Saubhagya","Shobhana","Atiganda","Sukarma","Dhriti","Shula","Ganda","Vriddhi","Dhruva","Vyaghata","Harshana","Vajra","Siddhi","Vyatipata","Variyana","Parigha","Shiva","Siddha","Sadhya","Shubha","Shukla","Brahma","Indra","Vaidhriti"];
+const KARAN_EN=["Bava","Balava","Kaulava","Taitila","Garaja","Vanija","Vishti","Shakuni","Chatushpada","Nagava","Kimstughna"];
+const KARAN_TA=["பவ","பாலவ","கௌலவ","தைதில","கரஜ","வணிஜ","விஷ்டி","சகுணி","சதுஷ்பாத","நாகவ","கிம்ஸ்துக்னம்"];
+const MONTHS_EN=["Chithirai","Vaikasi","Aani","Aadi","Aavani","Purattasi","Aippasi","Karthigai","Margazhi","Thai","Maasi","Panguni"];
+const MONTHS_TA=["சித்திரை","வைகாசி","ஆனி","ஆடி","ஆவணி","புரட்டாசி","ஐப்பசி","கார்த்திகை","மார்கழி","தை","மாசி","பங்குனி"];
+const YEARS_EN=["Prabhava","Vibhava","Shukla","Pramodutha","Prajothpathi","Aankirasa","Srimukha","Bava","Yuva","Dhathu","Easwara","Vehudhanya","Pramathi","Vikrama","Vishu","Chithrabhanu","Subhanu","Tharana","Parthiva","Viya","Sarvajith","Sarvadharin","Virodhi","Vikrithy","Kara","Nandana","Vijaya","Jaya","Manmadha","Durmukhi","Hevilambi","Vilambi","Vikaari","Saarvari","Plava","Shubhakritu","Sobhakritu","Krodhi","Viswavasu","Paraabhava","Plavanga","Kilaka","Saumya","Sadhaarana","Virodhikritu","Paridhabi","Pramadicha","Aananda","Rakshasa","Nala","Pingala","Kaalayukthi","Siddharthi","Raudri","Durmathi","Dundhubhi","Rudhirodgaari","Raktakshi","Krodhana","Akshaya"];
+const GREG_M=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const RAHU_IDX=[7,1,6,4,5,3,2],GULIKAI_IDX=[6,5,4,3,2,1,0],YAMA_IDX=[4,3,2,1,0,6,5];
 
-// ── KOLAM CANVAS ───────────────────────────────────────
-const canvas = document.getElementById('kolam');
-const ctx = canvas.getContext('2d');
-let angle = 0;
-function drawKolam() {
-  ctx.clearRect(0, 0, 700, 700);
-  ctx.save();
-  ctx.translate(350, 350);
-  ctx.rotate(angle);
-  ctx.strokeStyle = '#F5C518';
-  ctx.lineWidth = 1;
-  for (let r = 30; r < 320; r += 30) {
-    ctx.beginPath();
-    for (let a = 0; a < Math.PI*2; a += Math.PI/24) {
-      const x = r * Math.cos(a) * 1.3;
-      const y = r * Math.sin(a) * 0.7;
-      a === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
-    }
-    ctx.closePath(); ctx.stroke();
-  }
-  for (let a = 0; a < Math.PI*2; a += Math.PI/12) {
-    ctx.beginPath();
-    ctx.moveTo(0,0);
-    ctx.lineTo(310*Math.cos(a)*1.3, 310*Math.sin(a)*0.7);
-    ctx.stroke();
-  }
-  ctx.restore();
-  angle += 0.002;
-  requestAnimationFrame(drawKolam);
-}
-drawKolam();
+const RASIS=[
+  {sym:"♈",en:"Mesha",ta:"மேஷம்",el:"Aries · Fire"},
+  {sym:"♉",en:"Rishabha",ta:"ரிஷபம்",el:"Taurus · Earth"},
+  {sym:"♊",en:"Mithuna",ta:"மிதுனம்",el:"Gemini · Air"},
+  {sym:"♋",en:"Kataka",ta:"கடகம்",el:"Cancer · Water"},
+  {sym:"♌",en:"Simha",ta:"சிம்மம்",el:"Leo · Fire"},
+  {sym:"♍",en:"Kanya",ta:"கன்னி",el:"Virgo · Earth"},
+  {sym:"♎",en:"Thula",ta:"துலாம்",el:"Libra · Air"},
+  {sym:"♏",en:"Vrishchika",ta:"விருச்சிகம்",el:"Scorpio · Water"},
+  {sym:"♐",en:"Dhanu",ta:"தனுசு",el:"Sagittarius · Fire"},
+  {sym:"♑",en:"Makara",ta:"மகரம்",el:"Capricorn · Earth"},
+  {sym:"♒",en:"Kumbha",ta:"கும்பம்",el:"Aquarius · Air"},
+  {sym:"♓",en:"Meena",ta:"மீனம்",el:"Pisces · Water"},
+];
 
-// ── LIVE PANCHANGAM DATA ────────────────────────────────
-const NAKSH_EN = ["Ashwini","Bharani","Krittika","Rohini","Mrigashira","Ardra","Punarvasu","Pushya","Ashlesha","Magha","Purva Phalguni","Uttara Phalguni","Hasta","Chitra","Swati","Vishakha","Anuradha","Jyeshtha","Mula","Purva Ashadha","Uttara Ashadha","Shravana","Dhanishtha","Shatabhisha","Purva Bhadra","Uttara Bhadra","Revati"];
-const TITHI_EN = ["Prathama","Dvitiya","Tritiya","Chaturthi","Panchami","Shashthi","Saptami","Ashtami","Navami","Dashami","Ekadashi","Dvadashi","Trayodashi","Chaturdashi","Purnima / Amavasya"];
-const YOGAM_EN = ["Vishkambha","Priti","Ayushman","Saubhagya","Shobhana","Atiganda","Sukarma","Dhriti","Shula","Ganda","Vriddhi","Dhruva","Vyaghata","Harshana","Vajra","Siddhi","Vyatipata","Variyana","Parigha","Shiva","Siddha","Sadhya","Shubha","Shukla","Brahma","Indra","Vaidhriti"];
-const DAYS_EN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const RULERS  = ["Sun","Moon","Mars","Mercury","Jupiter","Venus","Saturn"];
-const RASIS   = ["Mesha","Rishabha","Mithuna","Kataka","Simha","Kanya","Thula","Vrishchika","Dhanu","Makara","Kumbha","Meena"];
-const RAHU_SLOTS = [[1030,1130],[730,830],[1530,1630],[1200,1300],[1030,1130],[1030,1130],[900,1000]];
+const RASI_PALAN_2026=[
+  {career:"Jupiter's aspect on your 10th house brings promotion opportunities in the first half. Expect recognition for past efforts. Business partnerships formed in May–June will be fruitful.",health:"Mars in your sign until March demands rest. Avoid overexertion. Diet improvements after July bring sustained energy.",love:"Venus transits bring romantic opportunities in April and October. Singles may meet significant others through family introductions.",finance:"Saturn's 11th house position ensures steady income gains. Avoid impulsive investments in January–February. Property matters improve by October.",family:"Family harmony is strong through the year. A joyful event — likely a wedding or birth — in the second half brightens the home.",stars:[4,5,4,3,4],colors:["Red","Orange","Gold"]},
+  {career:"A year of consolidation rather than change. Established professionals will see steady growth. Those seeking new jobs should focus efforts in March and September.",health:"Venus rules your sign ensuring general well-being. Dental and throat issues may arise — attend to them early. Rest improves everything.",love:"Strong romantic year. Committed couples deepen their bond. Singles: don't rush — the right person arrives when you stop looking.",finance:"Excellent financial year. Property investments made in 2026 will prove very wise within three years. Savings grow steadily.",family:"Parents' health needs attention in the second half. A family reunion or gathering in the festive season brings lasting memories.",stars:[4,4,5,4,3],colors:["White","Pink","Green"]},
+  {career:"Mercury's influence makes 2026 excellent for communication-based careers — writing, teaching, marketing, IT. New projects succeed quickly.",health:"Respiratory health requires care in winter months. Yoga and breathing exercises provide significant benefit this year.",love:"Your charm is at its peak in 2026. Multiple romantic interests possible — choose wisely. Existing relationships benefit from honest communication.",finance:"Mixed financial year. Income rises but so do expenses. Budget carefully from June onwards. Avoid guaranteeing others' loans.",family:"Siblings play an important role this year — their support or a shared project strengthens bonds.",stars:[3,4,3,4,5],colors:["Green","Yellow","Blue"]},
+  {career:"Moon's position favours careers in healthcare, hospitality, real estate and creative arts. Public recognition comes for those who deserve it.",health:"Emotional wellbeing directly affects physical health this year. Stress management through meditation brings remarkable results.",love:"Deep, emotionally fulfilling year for love. Existing couples planning marriage will find this an ideal year to proceed.",finance:"Property and real estate investments are particularly favoured. Family financial matters resolve positively by mid-year.",family:"Home improvements and a possible change of residence. Family relationships are harmonious and nurturing throughout.",stars:[4,5,4,4,3],colors:["White","Silver","Cream"]},
+  {career:"Sun's position makes 2026 a year for leadership. Expect to take charge of important projects. Political and administrative careers shine especially.",health:"Heart health deserves attention — regular check-ups advised. Generous physical activity sustains the high energy this sign naturally carries.",love:"Royally romantic year. You attract admiration effortlessly. For married Simhas: deepen your partnership through shared goals.",finance:"Excellent year for financial gains through authority positions, government dealings and investments in well-established companies.",family:"You become the anchor of your family this year. Your decisions shape the household's direction positively.",stars:[5,4,4,3,4],colors:["Gold","Orange","Red"]},
+  {career:"Mercury's analytical gifts are amplified. Detail-oriented work, research, medical and accounting careers flourish. A long-deserved promotion arrives mid-year.",health:"Digestive health is the focus. Follow a consistent meal schedule. Avoid processed foods. Herbal remedies work well this year.",love:"Patience is your greatest romantic virtue this year. Don't over-analyse — let relationships flow naturally. Summer brings warmth.",finance:"Conservative financial approach rewards you greatly. Savings, fixed deposits and cautious investments outperform speculative ones.",family:"A younger family member requires your guidance. Your wisdom and patience make you the family's trusted advisor.",stars:[4,4,5,4,3],colors:["Green","Brown","Blue"]},
+  {career:"Venus and Saturn combine to bring career transformation. New partnerships and collaborations formed in 2026 will define the next decade.",health:"Kidney and lower back require care. Adequate water intake and light stretching daily make a significant difference.",love:"A landmark year for relationships. Marriage proposals, commitments and deep romantic milestones are very likely.",finance:"Saturn's discipline helps build lasting wealth. Investments in technology and partnerships bring good returns in 2–3 years.",family:"Harmony in the home increases month by month. A balanced approach to family decisions wins everyone's trust.",stars:[4,5,3,4,4],colors:["White","Blue","Silver"]},
+  {career:"Mars and Ketu bring intensity and focus to career ambitions. Courage pays off — take that calculated risk in the second half.",health:"Energy levels are high but burn-out risk is real. Scheduled rest is as important as activity this year.",love:"Deeply passionate year. Intensity in relationships is high — channel it constructively. Jealousy is the only enemy.",finance:"Unexpected financial gains possible through inheritance, insurance or investment returns. Don't speculate with these windfalls.",family:"Family transformations — possibly a move, a new addition or a life change — bring ultimately positive outcomes.",stars:[3,4,4,5,4],colors:["Red","Maroon","Black"]},
+  {career:"Jupiter, your ruler, is in an excellent position. Teaching, law, religion, international business and higher education careers flourish magnificently.",health:"Hips and thighs need exercise and care. Outdoor activities and travel itself is therapeutic for Dhanu natives in 2026.",love:"Freedom-loving as always — but 2026 brings someone who understands you completely. Don't let them slip away.",finance:"Jupiter's blessing brings financial expansion. Long-distance business and import/export ventures are particularly rewarding.",family:"Philosophical discussions and travel with family strengthen bonds in ways that ordinary life cannot.",stars:[5,4,4,4,3],colors:["Yellow","Purple","Gold"]},
+  {career:"Saturn's discipline is your superpower this year. Hard work accumulates into significant achievements. Government careers and real estate particularly favoured.",health:"Bone and joint health needs regular exercise. Cold weather aggravates — keep yourself warm and active in winter months.",love:"Steady, committed love is your 2026 story. Not fireworks, but foundations. Those foundations will last a lifetime.",finance:"The most financially disciplined sign has its best year in a decade. Investments made now will mature beautifully.",family:"You carry family responsibilities with dignity. Your dependability earns deep respect from every family member.",stars:[4,4,5,3,4],colors:["Blue","Black","Brown"]},
+  {career:"Saturn and Rahu bring unusual opportunities — perhaps in technology, social causes or international work. Embrace the unexpected.",health:"Circulation and nervous system wellbeing improves with yoga and regular sleep patterns. Screen time reduction helps enormously.",love:"Unconventional love story possible this year. Don't judge by appearance — the right connection will surprise you.",finance:"Group investments, mutual funds and technology stocks favour Kumbha natives in 2026. Avoid solo ventures in January.",family:"Your humanitarian instincts extend to family. You become the bridge-builder between conflicting family members.",stars:[3,4,4,5,4],colors:["Blue","Violet","Grey"]},
+  {career:"Jupiter and Neptune heighten creative and spiritual gifts. Arts, music, healing professions, spirituality and counselling careers reach new heights.",health:"Feet and immune system need care. Adequate sleep is non-negotiable. Water-based exercise is particularly beneficial.",love:"Deeply romantic and spiritually connected relationships define 2026. A soul-level bond is possible this year.",finance:"Intuition guides financial decisions well this year. Trust your instincts over market trends. Charity brings unexpected returns.",family:"You are the spiritual and emotional heart of your family. Your sensitivity and love holds everyone together.",stars:[4,5,3,4,4],colors:["Sea Green","Lavender","White"]},
+];
 
+const FESTIVALS_2026=[
+  {m:0,d:14,name:"Pongal",ta:"பொங்கல்",desc:"Harvest festival thanking the Sun god. Most important Tamil festival.",color:"#E8650A",type:"Major Festival"},
+  {m:0,d:15,name:"Mattu Pongal",ta:"மாட்டு பொங்கல்",desc:"Day to honour cattle for their role in agriculture.",color:"#F59E0B",type:"Festival"},
+  {m:0,d:26,name:"Republic Day",ta:"குடியரசு தினம்",desc:"Indian national holiday celebrating the Constitution of India.",color:"#10B981",type:"Public Holiday"},
+  {m:1,d:26,name:"Maha Shivaratri",ta:"மகா சிவராத்திரி",desc:"Night-long worship of Lord Shiva. Fasting and all-night vigil observed.",color:"#8B5CF6",type:"Major Festival"},
+  {m:3,d:14,name:"Tamil New Year",ta:"தமிழ் புத்தாண்டு",desc:"Beginning of the Tamil solar year — Chithirai 1. Kolam, new clothes, temple visits.",color:"#E8650A",type:"Major Festival"},
+  {m:4,d:23,name:"Vaikasi Visakam",ta:"வைகாசி விசாகம்",desc:"Birthday of Lord Murugan — celebrated at Murugan temples worldwide.",color:"#8B5CF6",type:"Major Festival"},
+  {m:4,d:7,name:"Akshaya Tritiya",ta:"அட்சய திருதியை",desc:"Highly auspicious day for gold purchase, new beginnings and marriages.",color:"#F5C518",type:"Auspicious Day"},
+  {m:6,d:4,name:"Aadi Perukku",ta:"ஆடி பெருக்கு",desc:"Tamil festival celebrating rivers and water sources on the 18th of Aadi.",color:"#0EA5E9",type:"Festival"},
+  {m:7,d:7,name:"Krishna Jayanti",ta:"கிருஷ்ண ஜெயந்தி",desc:"Birthday of Lord Krishna — Gokulashtami. Kolam, butter and bhajans.",color:"#0EA5E9",type:"Major Festival"},
+  {m:7,d:15,name:"Independence Day",ta:"சுதந்திர தினம்",desc:"Indian national holiday celebrating independence from British rule in 1947.",color:"#10B981",type:"Public Holiday"},
+  {m:8,d:19,name:"Mahalaya Amavasai",ta:"மகாளய அமாவாசை",desc:"Most important day for ancestor worship. Pitru Paksha begins.",color:"#6366F1",type:"Auspicious Day"},
+  {m:8,d:22,name:"Navratri Begins",ta:"நவராத்திரி தொடக்கம்",desc:"Nine nights of Devi worship. Golu arrangements in every home.",color:"#EF4444",type:"Major Festival"},
+  {m:9,d:1,name:"Saraswati Puja",ta:"சரஸ்வதி பூஜை",desc:"Books, instruments and tools are worshipped. Students pray for wisdom.",color:"#8B5CF6",type:"Major Festival"},
+  {m:9,d:2,name:"Vijaya Dasami",ta:"விஜய தசமி",desc:"Victory of good over evil. Most auspicious day to begin new learning.",color:"#E8650A",type:"Major Festival"},
+  {m:9,d:20,name:"Diwali",ta:"தீபாவளி",desc:"Festival of lights — crackers, sweets, new clothes and Lakshmi worship.",color:"#F5C518",type:"Major Festival"},
+  {m:10,d:13,name:"Karthigai Deepam",ta:"கார்த்திகை தீபம்",desc:"Festival of lights — lamps lit in every home and temple.",color:"#F5C518",type:"Major Festival"},
+  {m:11,d:25,name:"Christmas",ta:"கிறிஸ்துமஸ்",desc:"Widely celebrated across Tamil Nadu and the Tamil diaspora.",color:"#10B981",type:"Public Holiday"},
+];
+
+// GOOD DAYS FOR MUHURTHAM (Tithi + Yogam combinations)
+const GOOD_TITHIS_FOR={
+  wedding:[1,2,3,5,6,7,10,11,12,13],
+  griha:[1,2,3,5,6,7,10,11,12],
+  travel:[1,2,5,6,7,10,11,12,13],
+  business:[1,2,3,5,6,10,11,12],
+  vehicle:[1,2,3,5,6,7,11,12],
+  education:[1,2,3,5,7,10,11,12,13],
+  surgery:[1,2,5,7,10,11,13],
+  naming:[1,2,3,5,6,7,10,11,12,13],
+};
+const GOOD_DAYS_FOR={
+  wedding:[0,1,3,4,5],surgery:[1,3,4],
+  griha:[0,1,3,4,5],travel:[0,1,3,4,5],
+  business:[1,3,4,5],vehicle:[1,3,4,5],
+  education:[1,3,4],naming:[0,1,3,4,5],
+};
+
+// ══════════════════════════════════════════════════
+// CALCULATIONS
+// ══════════════════════════════════════════════════
 function getMoonAge(d){const b=new Date(2024,0,11);return(((d-b)/86400000%29.53059)+29.53059)%29.53059;}
+function getTamilDate(date){
+  const gM=[3,4,5,6,7,8,9,10,11,0,1,2],sS=[14,15,15,17,17,17,18,16,16,14,13,14];
+  let mi=0,td=1;const m=date.getMonth(),d=date.getDate();
+  for(let i=0;i<12;i++){if(m===gM[i]&&d>=sS[i]){mi=i;td=d-sS[i]+1;}else if(m===gM[i]&&d<sS[i]){mi=(i+11)%12;td=new Date(date.getFullYear(),gM[(i+11)%12]+1,0).getDate()-sS[(i+11)%12]+d+1;}}
+  const yd=date.getFullYear()-2025,base=date<new Date(date.getFullYear(),3,14)?(37+yd-1+60)%60:(37+yd+60)%60;
+  return{yearEn:YEARS_EN[base],monthEn:MONTHS_EN[mi],monthTa:MONTHS_TA[mi],day:Math.max(1,td),sakaYear:date.getFullYear()-78};
+}
+function getSun(date,lat,lon){
+  const doy=Math.floor((date-new Date(date.getFullYear(),0,0))/86400000);
+  const B=(2*Math.PI*(doy-81))/364,eot=9.87*Math.sin(2*B)-7.53*Math.cos(B)-1.5*Math.sin(B);
+  const decl=23.45*Math.sin(2*Math.PI*(doy-81)/365)*Math.PI/180,latR=lat*Math.PI/180;
+  const cosHA=-Math.tan(latR)*Math.tan(decl);
+  if(cosHA<-1||cosHA>1)return{rise:'—',set:'—',riseH:6,setH:18};
+  const ha=Math.acos(cosHA)/Math.PI*180,noon=12-lon/15-eot/60;
+  const riseUTC=noon-ha/15,setUTC=noon+ha/15;
+  const toL=u=>{const d2=new Date(date);d2.setUTCHours(0,Math.round(u*60),0,0);return d2.getHours()+d2.getMinutes()/60;};
+  const fmt=u=>{const d2=new Date(date);d2.setUTCHours(0,Math.round(u*60),0,0);const h=d2.getHours(),m=d2.getMinutes(),ap=h>=12?'PM':'AM';return`${h%12||12}:${String(m).padStart(2,'0')} ${ap}`;};
+  return{rise:fmt(riseUTC),set:fmt(setUTC),riseH:toL(riseUTC),setH:toL(setUTC)};
+}
+function getKal(date,lat,lon,dow){
+  const sun=getSun(date,lat,lon),len=(sun.setH-sun.riseH)/8;
+  const sl=idx=>{const s=sun.riseH+idx*len,e=s+len;const fmt=h=>{const hr=Math.floor(h)%24,mn=Math.min(59,Math.round((h-Math.floor(h))*60)),ap=hr>=12?'PM':'AM';return`${hr%12||12}:${String(mn).padStart(2,'0')} ${ap}`;};return{s:fmt(s),e:fmt(e),sH:s,eH:e};};
+  return{rahu:sl(RAHU_IDX[dow]),gulikai:sl(GULIKAI_IDX[dow]),yama:sl(YAMA_IDX[dow]),sun,len,riseH:sun.riseH,setH:sun.setH};
+}
 
-const now = new Date(), dow = now.getDay();
-const age = getMoonAge(now);
-const tIdx = Math.floor(age/29.53059*30)%30;
-const nIdx = Math.floor(age/29.53059*27)%27;
-const doy  = Math.floor((now-new Date(now.getFullYear(),0,0))/86400000);
-const yIdx = Math.floor(((doy/365.25*360+age/29.53059*360)%360)/(360/27))%27;
+// ══════════════════════════════════════════════════
+// LOCATION
+// ══════════════════════════════════════════════════
+const CITIES=[
+  {name:"Chennai, India",lat:13.0827,lon:80.2707},{name:"Mumbai, India",lat:19.076,lon:72.8777},{name:"Bangalore, India",lat:12.9716,lon:77.5946},{name:"Delhi, India",lat:28.6139,lon:77.209},{name:"Coimbatore, India",lat:11.0168,lon:76.9558},{name:"Madurai, India",lat:9.9252,lon:78.1198},{name:"Colombo, Sri Lanka",lat:6.9271,lon:79.8612},{name:"Singapore",lat:1.3521,lon:103.8198},{name:"Kuala Lumpur",lat:3.139,lon:101.6869},{name:"Dubai, UAE",lat:25.2048,lon:55.2708},{name:"London, UK",lat:51.5074,lon:-0.1278},{name:"Paris, France",lat:48.8566,lon:2.3522},{name:"Frankfurt, Germany",lat:50.1109,lon:8.6821},{name:"Toronto, Canada",lat:43.6532,lon:-79.3832},{name:"New York, USA",lat:40.7128,lon:-74.006},{name:"Chicago, USA",lat:41.8781,lon:-87.6298},{name:"Los Angeles, USA",lat:34.0522,lon:-118.2437},{name:"San Francisco, USA",lat:37.7749,lon:-122.4194},{name:"Sydney, Australia",lat:-33.8688,lon:151.2093},{name:"Melbourne, Australia",lat:-37.8136,lon:144.9631},{name:"Auckland, NZ",lat:-36.8485,lon:174.7633},{name:"Johannesburg, SA",lat:-26.2041,lon:28.0473},{name:"Nairobi, Kenya",lat:-1.2921,lon:36.8219},
+];
+let loc=CITIES[0];
+try{const s=localStorage.getItem('tv_loc2');if(s)loc=JSON.parse(s);}catch(e){}
 
-document.getElementById('hw-tithi').textContent  = TITHI_EN[tIdx%15];
-document.getElementById('hw-paksha').textContent = tIdx<15 ? 'Shukla Paksha' : 'Krishna Paksha';
-document.getElementById('hw-naksh').textContent  = NAKSH_EN[nIdx];
-document.getElementById('hw-rasi').textContent   = RASIS[Math.floor(nIdx/2.25)%12] + ' Rasi';
-document.getElementById('hw-day').textContent    = DAYS_EN[dow];
-document.getElementById('hw-ruler').textContent  = 'Ruled by ' + RULERS[dow];
-document.getElementById('hw-yogam').textContent  = YOGAM_EN[yIdx];
-document.getElementById('hw-yogq').textContent   = [1,2,3,4,5,6,11,12,13,20,21,25].includes(yIdx)?'Auspicious':'Neutral';
+// ══════════════════════════════════════════════════
+// APP STATE
+// ══════════════════════════════════════════════════
+let appTab='today',calYear=new Date().getFullYear(),calMonth=new Date().getMonth(),calSel=null,appRasiSel=null,webRasiSel=null;
 
-const rs = RAHU_SLOTS[dow];
-const fmt = v=>{const h=Math.floor(v/100),m=v%100;return`${h>12?h-12:h||12}:${String(m).padStart(2,'0')} ${h>=12?'PM':'AM'}`;};
-document.getElementById('hw-rahu').textContent = `${fmt(rs[0])} – ${fmt(rs[1])}`;
+// ══════════════════════════════════════════════════
+// APP RENDER
+// ══════════════════════════════════════════════════
+function renderApp(root){
+  const now=new Date(),dow=now.getDay();
+  const age=getMoonAge(now);
+  const tIdx=Math.floor(age/29.53059*30)%30;
+  const nIdx=Math.floor(age/29.53059*27)%27;
+  const doy=Math.floor((now-new Date(now.getFullYear(),0,0))/86400000);
+  const yIdx=Math.floor(((doy/365.25*360+age/29.53059*360)%360)/(360/27))%27;
+  const kIdx=Math.floor(age*2)%11;
+  const td=getTamilDate(now);
+  const sun=getSun(now,loc.lat,loc.lon);
+  const kal=getKal(now,loc.lat,loc.lon,dow);
+  const nowH=now.getHours()+now.getMinutes()/60;
+  const sunP=Math.max(0,Math.min(100,(nowH-sun.riseH)/(sun.setH-sun.riseH)*100));
+  const segs=Array.from({length:16},(_,i)=>{const s=kal.riseH+i*(kal.setH-kal.riseH)/16,ri=kal.riseH+RAHU_IDX[dow]*kal.len,gi=kal.riseH+GULIKAI_IDX[dow]*kal.len,yi=kal.riseH+YAMA_IDX[dow]*kal.len;return s>=ri&&s<ri+kal.len?'r':s>=gi&&s<gi+kal.len?'g':s>=yi&&s<yi+kal.len?'y':'';});
+  const goodY=[1,2,3,4,5,6,11,12,13,20,21,25].includes(yIdx);
 
-// ── SCROLL REVEAL ───────────────────────────────────────
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
-},{threshold:0.1});
-document.querySelectorAll('.feature-card,.support-card,.city-pill').forEach(el=>{
-  el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';
-  observer.observe(el);
-});
+  const todayH=`
+    <div class="locbar"><div><div style="font-size:.52rem;color:rgba(255,255,255,.35);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Times for</div><div style="font-size:.72rem;font-weight:700;color:#F5C518">📍 ${loc.name}</div></div><button class="locbtn" onclick="showPicker()">Change</button></div>
+    <div class="suncard"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div class="al">Sunrise · Sunset</div><div class="av">${sun.rise} · ${sun.set}</div></div><div style="font-size:1.4rem">☀️</div></div><div class="strack"><div class="sball" style="left:${sunP}%"></div></div><div style="display:flex;justify-content:space-between;font-size:.58rem;color:#4A3F6B;font-weight:500"><span>🌅 ${sun.rise}</span><span>🌇 ${sun.set}</span></div></div>
+    <div class="asec">☸ Five Elements</div>
+    <div class="ag">
+      <div class="ac" style="--ca:#E8650A"><div class="al">Tithi · <span style="font-family:serif">திதி</span></div><div class="av">${TITHI_EN[tIdx%15]}</div><div class="asb">${tIdx<15?'Shukla':'Krishna'} Paksha</div></div>
+      <div class="ac" style="--ca:#C0392B"><div class="al">Vaaram</div><div class="av">${DAYS_EN[dow]}</div><div class="asb" style="font-size:.56rem">${RULERS[dow]}</div></div>
+      <div class="ac" style="--ca:#8B5CF6"><div class="al">Nakshatram</div><div class="av">${NAKSH_EN[nIdx]}</div><div class="asb" style="font-family:serif">${NAKSH_TA[nIdx]}</div></div>
+      <div class="ac" style="--ca:#0EA5E9"><div class="al">Yogam</div><div class="av">${YOGAM_EN[yIdx]}</div><div class="asb">${goodY?'✓ Auspicious':'Neutral'}</div></div>
+    </div>
+    <div class="ac" style="--ca:#10B981"><div class="al">Karanam · <span style="font-family:serif">கரணம்</span></div><div style="display:flex;gap:12px;margin-top:3px"><div><div class="av" style="font-size:.78rem">${KARAN_EN[kIdx]}</div><div class="asb">Morning</div></div><div style="color:#ddd">|</div><div><div class="av" style="font-size:.78rem">${KARAN_EN[(kIdx+1)%11]}</div><div class="asb">Afternoon</div></div></div></div>
+    <div class="asec">✨ Muhurthams</div>
+    <div class="arow"><div class="ardot" style="background:#8B5CF6"></div><div class="arnm">Brahma Muhurtham<div style="font-size:.56rem;color:#8B7DB5">96 min before sunrise · Prayer & meditation</div></div><span class="bg">✓ Good</span></div>
+    <div class="arow"><div class="ardot" style="background:#10B981"></div><div class="arnm">Abhijit Muhurtham<div style="font-size:.56rem;color:#8B7DB5">Solar noon ±24 min · All auspicious acts</div></div><span class="bg">✓ Best</span></div>
+    <div class="arow"><div class="ardot" style="background:#EF4444"></div><div class="arnm">Rahu Kalam<div style="font-size:.56rem;color:#8B7DB5">Avoid new beginnings</div></div><div><div class="artm">${kal.rahu.s}–${kal.rahu.e}</div><span class="ba" style="margin-top:2px;display:inline-block">✗ Avoid</span></div></div>
+    <div class="arow"><div class="ardot" style="background:#F59E0B"></div><div class="arnm">Gulikai Kalam</div><div><div class="artm">${kal.gulikai.s}–${kal.gulikai.e}</div><span class="ba" style="margin-top:2px;display:inline-block">✗ Avoid</span></div></div>
+    <div class="arow"><div class="ardot" style="background:#6366F1"></div><div class="arnm">Yamagandam</div><div><div class="artm">${kal.yama.s}–${kal.yama.e}</div><span class="ba" style="margin-top:2px;display:inline-block">✗ Avoid</span></div></div>
+    <div class="asec">📜 Tamil Date</div>
+    <div class="ac"><div class="ir"><span class="ik">Tamil Year</span><span class="iv">${td.yearEn}</span></div><div class="ir"><span class="ik">Tamil Month</span><span class="iv">${td.monthEn} <span style="font-family:serif;font-size:.6rem;color:#8B7DB5">${td.monthTa}</span></span></div><div class="ir"><span class="ik">Tamil Day</span><span class="iv">Day ${td.day}</span></div><div class="ir" style="border:none"><span class="ik">Shaka Year</span><span class="iv">${td.sakaYear} CE</span></div></div>`;
+
+  const timingsH=`
+    <div class="rahudk"><div style="font-size:.58rem;color:rgba(255,255,255,.35);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:9px">⚠️ Inauspicious Periods</div><div style="display:flex;gap:8px"><div style="flex:1"><div style="font-size:.5rem;color:rgba(255,255,255,.32);font-weight:700;text-transform:uppercase">Rahu Kalam</div><div style="font-family:serif;font-size:.5rem;color:rgba(255,255,255,.2);margin-bottom:2px">ராகு காலம்</div><div style="font-size:.72rem;font-weight:700;color:#EF4444">${kal.rahu.s}–${kal.rahu.e}</div></div><div style="flex:1"><div style="font-size:.5rem;color:rgba(255,255,255,.32);font-weight:700;text-transform:uppercase">Gulikai</div><div style="font-family:serif;font-size:.5rem;color:rgba(255,255,255,.2);margin-bottom:2px">குளிகை</div><div style="font-size:.72rem;font-weight:700;color:#F59E0B">${kal.gulikai.s}–${kal.gulikai.e}</div></div><div style="flex:1"><div style="font-size:.5rem;color:rgba(255,255,255,.32);font-weight:700;text-transform:uppercase">Yamagandam</div><div style="font-family:serif;font-size:.5rem;color:rgba(255,255,255,.2);margin-bottom:2px">யமகண்டம்</div><div style="font-size:.72rem;font-weight:700;color:#6366F1">${kal.yama.s}–${kal.yama.e}</div></div></div><div class="segbar">${segs.map(s=>`<div class="seg ${s}"></div>`).join('')}</div><div style="display:flex;justify-content:space-between;margin-top:3px;font-size:.5rem;color:rgba(255,255,255,.22)"><span>${sun.rise}</span><span>Noon</span><span>${sun.set}</span></div></div>
+    <div class="asec">🌅 Auspicious Timings</div>
+    <div class="arow"><div class="ardot" style="background:#10B981"></div><div class="arnm">Abhijit Kalam<div style="font-size:.56rem;color:#8B7DB5">All auspicious activities, weddings</div></div><div class="artm">Noon ±24min</div></div>
+    <div class="arow"><div class="ardot" style="background:#8B5CF6"></div><div class="arnm">Brahma Muhurtham<div style="font-size:.56rem;color:#8B7DB5">Prayer, meditation, study</div></div><div class="artm">96min pre-sunrise</div></div>
+    <div class="arow"><div class="ardot" style="background:#0EA5E9"></div><div class="arnm">Amruta Kalam<div style="font-size:.56rem;color:#8B7DB5">Travel, new ventures</div></div><div class="artm">Early morning</div></div>
+    <div class="arow"><div class="ardot" style="background:#F5C518"></div><div class="arnm">Lagna Kalam<div style="font-size:.56rem;color:#8B7DB5">Marriage, Griha Pravesh</div></div><div class="artm">After sunrise</div></div>`;
+
+  // Rasi tab inside app
+  const rasiH=`
+    <div class="asec">🔮 Rasi Palan 2026</div>
+    <div class="rasi-grid">${RASIS.map((r,i)=>`<div class="rasi-card${appRasiSel===i?' sel':''}" onclick="appSelRasi(${i})"><div class="rsym">${r.sym}</div><div class="rn">${r.en}</div><div class="rt">${r.ta}</div></div>`).join('')}</div>
+    ${appRasiSel!==null?`
+    <div class="pred-card">
+      <div class="pred-title">${RASIS[appRasiSel].sym} ${RASIS[appRasiSel].en}</div>
+      <div class="pred-ta">${RASIS[appRasiSel].ta} · ${RASIS[appRasiSel].el}</div>
+      <div class="pred-year">2026 Yearly Prediction — ${YEARS_EN[37]} Year</div>
+      ${['career','health','love','finance','family'].map((k,i)=>`<div class="pred-section"><div class="pred-label">${['💼 Career','❤️ Health','💕 Love','💰 Finance','👨‍👩‍👧 Family'][i]}</div><div class="pred-text">${RASI_PALAN_2026[appRasiSel][k]}</div></div>`).join('')}
+      <div class="pred-bars">${['Career','Health','Love','Finance','Family'].map((k,i)=>{const v=RASI_PALAN_2026[appRasiSel].stars[i];const colors=['#8B5CF6','#10B981','#EF4444','#F5C518','#0EA5E9'];return`<div class="pbar-row"><div class="pbar-label" style="font-size:.56rem;color:#4A3F6B">${k}</div><div class="pbar-track"><div class="pbar-fill" style="width:${v*20}%;background:${colors[i]}"></div></div><div style="font-size:.58rem;color:#8B7DB5;margin-left:4px">${v}/5</div></div>`;}).join('')}</div>
+    </div>`:'<div style="text-align:center;font-size:.68rem;color:#8B7DB5;padding:16px 0">Select your Rasi above to see 2026 predictions</div>'}`;
+
+  // Muhurtham finder inside app
+  const muhH=`
+    <div class="asec">✨ Muhurtham Finder</div>
+    <div class="mf-form">
+      <div class="mf-label">Occasion</div>
+      <select id="appMfOcc" class="mf-select"><option value="wedding">💒 Wedding</option><option value="griha">🏠 Housewarming</option><option value="travel">✈️ Travel</option><option value="business">💼 Business</option><option value="vehicle">🚗 Vehicle Purchase</option><option value="education">📚 Education</option></select>
+      <div class="mf-label" style="margin-top:6px">Month</div>
+      <select id="appMfMon" class="mf-select"><option value="6">July 2026</option><option value="7">August 2026</option><option value="8">September 2026</option><option value="9">October 2026</option><option value="10">November 2026</option><option value="11">December 2026</option></select>
+      <button class="mf-btn" onclick="appFindMuh()">🔍 Find Auspicious Dates</button>
+    </div>
+    <div class="mf-result" id="appMfRes"></div>`;
+
+  // Widget tab inside app
+  const widH=`
+    <div class="asec">📱 Home Screen Widget</div>
+    <div class="widget-preview">
+      <div class="wp-title">Small Widget (2×2)</div>
+      <div class="widget-sm"><div class="wt">தமிழ் பஞ்சாங்கம்</div><div class="ws2"><div class="witem"><div class="wi-l">Tithi</div><div class="wi-v">${TITHI_EN[tIdx%15].slice(0,7)}</div></div><div class="witem"><div class="wi-l">Star</div><div class="wi-v">${NAKSH_EN[nIdx].slice(0,7)}</div></div><div class="witem"><div class="wi-l">Rahu</div><div class="wi-v" style="color:#EF4444;font-size:.62rem">${kal.rahu.s}</div></div><div class="witem"><div class="wi-l">Yogam</div><div class="wi-v">${YOGAM_EN[yIdx].slice(0,6)}</div></div></div></div>
+      <div class="wp-title" style="margin-top:8px">Wide Widget (4×2)</div>
+      <div class="widget-md"><div class="wt">தமிழ் பஞ்சாங்கம் · ${DAYS_EN[dow]}</div><div class="ws2"><div class="witem"><div class="wi-l">Tithi</div><div class="wi-v">${TITHI_EN[tIdx%15].slice(0,8)}</div></div><div class="witem"><div class="wi-l">Nakshatram</div><div class="wi-v">${NAKSH_EN[nIdx].slice(0,7)}</div></div><div class="witem"><div class="wi-l">Rahu Kalam</div><div class="wi-v" style="color:#EF4444;font-size:.62rem">${kal.rahu.s}–${kal.rahu.e}</div></div><div class="witem"><div class="wi-l">Muhurtham</div><div class="wi-v" style="color:#10B981;font-size:.58rem">Noon ±24min</div></div></div></div>
+    </div>
+    <div class="install-steps">
+      <div class="is-title">📲 How to add widget</div>
+      <div class="is-step"><div class="is-num">1</div><div class="is-text">Download the app from Google Play and open it once</div></div>
+      <div class="is-step"><div class="is-num">2</div><div class="is-text">Long-press your home screen until it wobbles</div></div>
+      <div class="is-step"><div class="is-num">3</div><div class="is-text">Tap <strong>Widgets</strong> → find <em>Tamil Panchangam</em></div></div>
+      <div class="is-step"><div class="is-num">4</div><div class="is-text">Choose size (2×2 or 4×2) and drag to home screen</div></div>
+    </div>
+    <button class="wdl-btn" onclick="window.open('https://play.google.com/store/apps/details?id=com.tamilvaram.panchangam','_blank')">🤖 Download on Google Play — Free</button>`;
+
+  // Festivals tab
+  const now2=new Date();
+  const upF=FESTIVALS_2026.filter(f=>new Date(2026,f.m,f.d)>=now2).slice(0,10);
+  const todF=FESTIVALS_2026.filter(f=>f.m===now2.getMonth()&&f.d===now2.getDate());
+  const festH=`
+    ${todF.length?`<div style="background:rgba(232,101,10,.08);border:1px solid rgba(232,101,10,.2);border-radius:9px;padding:9px;margin-bottom:8px"><div style="font-size:.58rem;font-weight:700;color:#E8650A;margin-bottom:4px">🎊 TODAY</div>${todF.map(f=>`<div style="font-size:.78rem;font-weight:700;color:#1A1240">${f.name}</div><div style="font-family:serif;font-size:.65rem;color:#E8650A">${f.ta}</div><div style="font-size:.65rem;color:#4A3F6B;margin-top:2px">${f.desc}</div>`).join('')}</div>`:''}
+    <div class="asec">📅 Upcoming Festivals</div>
+    ${upF.map(f=>{const fd=new Date(2026,f.m,f.d),isNear=fd-now2<7*86400000;return`<div class="fest-item"><div class="fdb" style="background:${f.color}"><div class="fd">${f.d}</div><div class="fm">${GREG_M[f.m].slice(0,3)}</div></div><div><div class="fn">${f.name}${isNear?`<span class="fnow">Soon</span>`:''}</div><div class="fta">${f.ta}</div><div class="ftyp">${f.type}</div></div></div>`;}).join('')}`;
+
+  // Calendar tab
+  const fD=new Date(calYear,calMonth,1).getDay(),dim=new Date(calYear,calMonth+1,0).getDate();
+  const fDays=new Set(FESTIVALS_2026.filter(f=>f.m===calMonth).map(f=>f.d));
+  const calH=`
+    <div class="calhdr"><button class="calnv" onclick="chM(-1)">◀</button><div class="calmth">${GREG_M[calMonth].slice(0,3)} ${calYear}</div><button class="calnv" onclick="chM(1)">▶</button></div>
+    <div class="calgrid">${['S','M','T','W','T','F','S'].map(d=>`<div class="caldh">${d}</div>`).join('')}</div>
+    <div class="calgrid">${Array.from({length:fD},()=>'<div></div>').join('')}${Array.from({length:dim},(_,i)=>{const d=i+1,td2=getTamilDate(new Date(calYear,calMonth,d));const isT=d===now.getDate()&&calMonth===now.getMonth()&&calYear===now.getFullYear();const isSel=d===calSel;return`<div class="calday${isT?' today':''}${isSel?' sel':''}${fDays.has(d)?' hf':''}" onclick="selDay(${d})"><span class="cn">${d}</span><span class="ct">${td2.day}</span></div>`;}).join('')}</div>
+    ${calSel?`<div style="margin-top:8px">${(()=>{const d=new Date(calYear,calMonth,calSel);const td3=getTamilDate(d);const t2=TITHI_EN[Math.floor(getMoonAge(d)/29.53059*30)%30%15];const n2=NAKSH_EN[Math.floor(getMoonAge(d)/29.53059*27)%27];const dF=FESTIVALS_2026.filter(f=>f.m===calMonth&&f.d===calSel);return`<div class="ac"><div class="ir"><span class="ik">${DAYS_EN[d.getDay()]}, ${calSel}</span><span class="iv">${td3.monthEn} ${td3.day}</span></div><div class="ir"><span class="ik">Tithi</span><span class="iv">${t2}</span></div><div class="ir"><span class="ik">Star</span><span class="iv">${n2}</span></div>${dF.map(f=>`<div class="ir"><span class="ik">Festival</span><span class="iv" style="color:#E8650A">${f.name}</span></div>`).join('')}</div>`;})()}</div>`:'<div style="font-size:.62rem;color:#8B7DB5;text-align:center;padding:8px 0">Tap any date for Panchangam details</div>'}`;
+
+  const infoH=`
+    <div class="asec">☸ Five Angas</div>
+    <div class="infocard">${[['Tithi · திதி','Lunar day — 1/30th synodic month'],['Vaaram · வாரம்','Solar weekday, ruled by a planet'],['Nakshatram · நட்சத்திரம்',"Moon's position in 27 mansions"],['Yogam · யோகம்','Sun + Moon longitude (27 types)'],['Karanam · கரணம்','Half a Tithi — two per day']].map(([k,v])=>`<div class="ir"><span class="ik" style="font-family:serif">${k}</span><span class="iv" style="font-size:.62rem;color:#4A3F6B;max-width:120px;text-align:right">${v}</span></div>`).join('')}</div>
+    <div class="asec">⭐ 27 Nakshatrams</div>
+    <div class="infocard"><div style="display:flex;flex-wrap:wrap">${NAKSH_EN.map((n,i)=>`<div class="tag"><span class="te">${n}</span><span class="ta2">${NAKSH_TA[i]}</span></div>`).join('')}</div></div>`;
+
+  const pages={today:todayH,timings:timingsH,rasi:rasiH,muhurtham:muhH,widget:widH,festivals:festH,calendar:calH,info:infoH};
+  const tabs=[{id:'today',icon:'📅',label:'Today'},{id:'timings',icon:'⏰',label:'Timings'},{id:'rasi',icon:'🔮',label:'Rasi'},{id:'muhurtham',icon:'✨',label:'Muhurtham'},{id:'widget',icon:'📱',label:'Widget'},{id:'festivals',icon:'🎊',label:'Festivals'},{id:'calendar',icon:'🗓',label:'Calendar'},{id:'info',icon:'📖',label:'Info'}];
+
+  root.innerHTML=`<div class="aw">
+    <div class="ah">
+      <div class="aht">தமிழ் பஞ்சாங்கம்</div>
+      <div class="ahs">tamilvaram.com · 100% Free</div>
+      <div class="adate"><span class="adot"></span>${DAYS_EN[dow]} · ${td.monthEn} ${td.day}</div>
+    </div>
+    <div class="anav">${tabs.map(t=>`<button class="atab${appTab===t.id?' on':''}" onclick="sw('${t.id}')"><span>${t.icon}</span>${t.label}</button>`).join('')}</div>
+    <div class="abody">${pages[appTab]||''}</div>
+  </div>`;
+}
+
+function sw(t){appTab=t;renderApp(document.getElementById('appRoot'));renderApp(document.getElementById('webApp'));}
+function chM(d){calMonth+=d;if(calMonth<0){calMonth=11;calYear--;}if(calMonth>11){calMonth=0;calYear++;}calSel=null;renderApp(document.getElementById('appRoot'));renderApp(document.getElementById('webApp'));}
+function selDay(d){calSel=calSel===d?null:d;renderApp(document.getElementById('appRoot'));renderApp(document.getElementById('webApp'));}
+function appSelRasi(i){appRasiSel=appRasiSel===i?null:i;renderApp(document.getElementById('appRoot'));renderApp(document.getElementById('webApp'));}
+
+function appFindMuh(){
+  const occ=document.getElementById('appMfOcc')?.value||'wedding';
+  const mon=parseInt(document.getElementById('appMfMon')?.value||'6');
+  const results=getMuhResults(occ,mon,null);
+  const el=document.getElementById('appMfRes');
+  if(!el)return;
+  el.style.display='block';
+  el.innerHTML=`<div style="font-size:.72rem;font-weight:700;color:#065F46;margin-bottom:7px">✨ Top Dates for ${occ.charAt(0).toUpperCase()+occ.slice(1)}</div>`+results.slice(0,4).map(r=>`<div class="mf-slot"><div class="mf-slot-date">${r.date}</div><div class="mf-slot-detail">${r.tithi} · ${r.naksh} · ${r.yogam}</div><span class="mf-slot-badge">${r.rank}</span></div>`).join('');
+}
+
+function getMuhResults(occ,mon,rasiIdx){
+  const goodT=GOOD_TITHIS_FOR[occ]||GOOD_TITHIS_FOR.wedding;
+  const goodD=GOOD_DAYS_FOR[occ]||GOOD_DAYS_FOR.wedding;
+  const results=[];
+  const dim=new Date(2026,mon+1,0).getDate();
+  for(let d=1;d<=dim;d++){
+    const date=new Date(2026,mon,d);
+    const dow=date.getDay();
+    if(![0,1,3,4,5].includes(dow))continue;
+    const age=getMoonAge(date);
+    const tIdx=Math.floor(age/29.53059*30)%30%15;
+    const nIdx=Math.floor(age/29.53059*27)%27;
+    const doy=Math.floor((date-new Date(2026,0,0))/86400000);
+    const yIdx=Math.floor(((doy/365.25*360+age/29.53059*360)%360)/(360/27))%27;
+    const goodY=[1,2,3,4,5,6,11,12,13,20,21,25].includes(yIdx);
+    const score=(goodT.includes(tIdx)?2:0)+(goodD.includes(dow)?1:0)+(goodY?1:0);
+    if(score>=2)results.push({date:`${DAYS_EN[dow]}, ${d} ${GREG_M[mon]} 2026`,tithi:TITHI_EN[tIdx],naksh:NAKSH_EN[nIdx],yogam:YOGAM_EN[yIdx],score,rank:score>=4?'⭐ Excellent':score>=3?'✓ Very Good':'✓ Good'});
+  }
+  return results.sort((a,b)=>b.score-a.score);
+}
+
+// WEBSITE MUHURTHAM FINDER
+function findMuhurtham(){
+  const occ=document.getElementById('mfOccasion').value;
+  const mon=parseInt(document.getElementById('mfMonth').value);
+  const dayPref=document.getElementById('mfDay').value;
+  const rasiIdx=document.getElementById('mfRasi').value;
+  let results=getMuhResults(occ,mon,rasiIdx?parseInt(rasiIdx):null);
+  if(dayPref!=='any')results=results.filter(r=>r.date.startsWith(DAYS_EN[parseInt(dayPref)]));
+  const el=document.getElementById('mfwResults');
+  el.className='mfw-results show';
+  if(results.length===0){el.innerHTML='<div style="color:#EF4444;font-size:.88rem;padding:16px 0">No highly auspicious dates found for this combination. Try a different month or day preference.</div>';return;}
+  el.innerHTML=`<h3 style="font-size:1rem;font-weight:700;color:#1A1240;margin-bottom:16px">✨ ${results.length} Auspicious Dates Found</h3>`+results.slice(0,6).map((r,i)=>`<div class="mfw-slot"><span class="mfw-rank${i===0?'':i===1?' s':' t'}">${r.rank}</span><div><div style="font-size:.9rem;font-weight:700;color:#1A1240">${r.date}</div><div style="font-size:.78rem;color:#4A3F6B;margin-top:3px">Tithi: ${r.tithi} · Star: ${r.naksh} · Yogam: ${r.yogam}</div></div></div>`).join('');
+}
+
+// WEBSITE RASI SECTION
+function renderRasiWeb(){
+  const grid=document.getElementById('rasiWebGrid');
+  grid.innerHTML=RASIS.map((r,i)=>`<div class="rwcard${webRasiSel===i?' active':''}" onclick="selRasiWeb(${i})"><div class="rwsym">${r.sym}</div><div class="rwn">${r.en}</div><div class="rwt">${r.ta}</div></div>`).join('');
+}
+function selRasiWeb(i){
+  webRasiSel=i;
+  renderRasiWeb();
+  const p=RASI_PALAN_2026[i],r=RASIS[i];
+  const panel=document.getElementById('rasiPanel');
+  panel.className='rpanel show';
+  panel.innerHTML=`
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px">
+      <div style="font-size:3rem">${r.sym}</div>
+      <div><div style="font-size:1.4rem;font-weight:700;color:#1A1240">${r.en} · <span style="font-family:serif;color:#E8650A">${r.ta}</span></div><div style="font-size:.82rem;color:#8B7DB5;margin-top:2px">${r.el} · 2026 Yearly Prediction</div><div style="display:flex;gap:6px;margin-top:6px">${p.colors.map(c=>`<span style="background:rgba(26,18,64,.06);color:#1A1240;font-size:.68rem;font-weight:600;padding:2px 9px;border-radius:8px">${c}</span>`).join('')}</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:24px">
+      ${['Career','Health','Love','Finance','Family'].map((k,i2)=>{const v=p.stars[i2];const icons=['💼','❤️','💕','💰','👨‍👩‍👧'];const cols=['#8B5CF6','#10B981','#EF4444','#F5C518','#0EA5E9'];return`<div style="text-align:center;background:#fff;border-radius:12px;padding:12px 8px;border:1px solid rgba(26,18,64,.07)"><div style="font-size:1.2rem;margin-bottom:4px">${icons[i2]}</div><div style="font-size:.68rem;font-weight:700;color:#4A3F6B;margin-bottom:6px">${k}</div><div style="height:4px;background:rgba(26,18,64,.07);border-radius:2px;overflow:hidden"><div style="width:${v*20}%;height:100%;background:${cols[i2]};border-radius:2px"></div></div><div style="font-size:.65rem;color:#8B7DB5;margin-top:4px">${v}/5</div></div>`;}).join('')}
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      ${['career','health','love','finance','family'].map((k,i2)=>`<div style="background:#fff;border-radius:14px;padding:18px;border:1px solid rgba(26,18,64,.07)"><div style="font-size:.72rem;font-weight:700;color:#8B7DB5;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">${['💼 Career','❤️ Health','💕 Love','💰 Finance','👨‍👩‍👧 Family'][i2]}</div><div style="font-size:.88rem;color:#4A3F6B;line-height:1.65">${p[k]}</div></div>`).join('')}
+    </div>`;
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// WIDGET LIVE DATA
+function updateWidgetData(){
+  const now=new Date(),dow=now.getDay();
+  const age=getMoonAge(now);
+  const tIdx=Math.floor(age/29.53059*30)%30;
+  const nIdx=Math.floor(age/29.53059*27)%27;
+  const doy=Math.floor((now-new Date(now.getFullYear(),0,0))/86400000);
+  const yIdx=Math.floor(((doy/365.25*360+age/29.53059*360)%360)/(360/27))%27;
+  const kal=getKal(now,loc.lat,loc.lon,dow);
+  const set=id=>{ const el=document.getElementById(id); if(el) el.textContent=arguments[1]; };
+  ['wTithi','wTithi2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=TITHI_EN[tIdx%15].slice(0,8);});
+  ['wNaksh','wNaksh2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=NAKSH_EN[nIdx].slice(0,7);});
+  ['wRahu','wRahu2'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=kal.rahu.s+'–'+kal.rahu.e;});
+  ['wYogam'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=YOGAM_EN[yIdx].slice(0,7);});
+  ['wDate'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=DAYS_EN[dow];});
+}
+
+// FESTIVALS WEB GRID
+function renderFestWeb(){
+  const now=new Date();
+  const up=FESTIVALS_2026.filter(f=>new Date(2026,f.m,f.d)>=now).slice(0,12);
+  document.getElementById('festWebGrid').innerHTML=up.map(f=>`<div class="fwcard"><div class="fwdate" style="background:${f.color}"><div class="fwd">${f.d}</div><div class="fwm">${GREG_M[f.m].slice(0,3)} '26</div></div><div><div class="fwname">${f.name}</div><div class="fwta">${f.ta}</div><div class="fwdesc">${f.desc}</div><div class="fwtype">${f.type}</div></div></div>`).join('');
+}
+
+// LOCATION PICKER
+function showPicker(){
+  const o=document.createElement('div');
+  o.style.cssText='position:fixed;inset:0;background:rgba(26,18,64,.88);z-index:999;display:flex;align-items:flex-end;';
+  o.innerHTML=`<div style="background:#FDF6EC;border-radius:20px 20px 0 0;width:100%;max-height:80vh;overflow-y:auto;padding:18px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><div style="font-size:.95rem;font-weight:700;color:#1A1240">Set Your Location</div><button onclick="this.closest('div[style*=fixed]').remove()" style="background:none;border:none;font-size:1.1rem;cursor:pointer">✕</button></div><button onclick="detectGPS(this)" style="width:100%;padding:10px;background:#1A1240;color:#F5C518;border:none;border-radius:9px;font-size:.85rem;font-weight:700;cursor:pointer;margin-bottom:9px">📍 Use My GPS Location</button><div style="display:flex;flex-direction:column;gap:5px">${CITIES.map((c,i)=>`<button onclick="pickC(${i})" style="background:#fff;border:1px solid rgba(232,101,10,.13);border-radius:8px;padding:9px 12px;text-align:left;cursor:pointer;font-size:.82rem;color:#1A1240;font-weight:500">🌍 ${c.name}</button>`).join('')}</div></div>`;
+  document.body.appendChild(o);
+}
+function detectGPS(btn){btn.textContent='⏳ Detecting…';navigator.geolocation?.getCurrentPosition(pos=>{loc={name:'Current Location 📍',lat:pos.coords.latitude,lon:pos.coords.longitude};try{localStorage.setItem('tv_loc2',JSON.stringify(loc));}catch(e){}btn.closest('div[style*="fixed"]').remove();renderApp(document.getElementById('appRoot'));renderApp(document.getElementById('webApp'));updateWidgetData();},()=>{btn.textContent='❌ Could not detect. Choose city below.';},{timeout:5000});}
+function pickC(i){loc=CITIES[i];try{localStorage.setItem('tv_loc2',JSON.stringify(loc));}catch(e){}document.querySelector('div[style*="position:fixed"]')?.remove();renderApp(document.getElementById('appRoot'));renderApp(document.getElementById('webApp'));updateWidgetData();}
+
+// STARS BACKGROUND
+const sc=document.getElementById('stars'),sctx=sc.getContext('2d');
+sc.width=window.innerWidth;sc.height=window.innerHeight;
+window.addEventListener('resize',()=>{sc.width=window.innerWidth;sc.height=window.innerHeight;drawStars();});
+const starData=Array.from({length:120},()=>({x:Math.random(),y:Math.random(),r:Math.random()*1.5+.3,op:Math.random(),d:2+Math.random()*4,delay:Math.random()*4}));
+let t=0;
+function drawStars(){sctx.clearRect(0,0,sc.width,sc.height);starData.forEach(s=>{const op=.1+(.5*s.op*(Math.sin((t/s.d+s.delay)*Math.PI*2)*.5+.5));sctx.beginPath();sctx.arc(s.x*sc.width,s.y*sc.height,s.r,0,Math.PI*2);sctx.fillStyle=`rgba(255,255,255,${op})`;sctx.fill();});t+=.016;requestAnimationFrame(drawStars);}
+drawStars();
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.07});
+document.querySelectorAll('.fcard,.rwcard,.fwcard,.city').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .45s ease,transform .45s ease';obs.observe(el);});
+
+// INIT
+renderApp(document.getElementById('appRoot'));
+renderApp(document.getElementById('webApp'));
+renderRasiWeb();
+renderFestWeb();
+updateWidgetData();
+
+// Auto GPS on first visit
+if(!localStorage.getItem('tv_loc2')){navigator.geolocation?.getCurrentPosition(pos=>{loc={name:'Current Location 📍',lat:pos.coords.latitude,lon:pos.coords.longitude};try{localStorage.setItem('tv_loc2',JSON.stringify(loc));}catch(e){}renderApp(document.getElementById('appRoot'));renderApp(document.getElementById('webApp'));updateWidgetData();},()=>{},{timeout:4000});}
 </script>
 </body>
 </html>
